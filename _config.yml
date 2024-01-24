@@ -1,6 +1,6 @@
 title: Plugdata and Daisy for starters
 description: A beginners components library for using Plugdata to program a Daisy 
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
 
 url: https://just-the-docs.github.io
 

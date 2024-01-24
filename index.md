@@ -2,33 +2,34 @@
 title: Home
 layout: home
 ---
-
 # This is a work in progress
 This page is the first setup for creating an environment where I can draft the first version of this guide idea.
 
 This is the current plan to make:
 
 Setting up Plugdata
-	What is Pure Data, what is Plugdata
-	Installation
-	Plugdata to Daisy
+* What is Pure Data, what is Plugdata
+* Installation
+*Plugdata to Daisy
 
 Basic insight in the handling of signal flow, memory and cpu
 
 Library of examples showing the usage of basis components:
-	potentiometer and faders
-	momentary pushbutton = switches
-	Toggle /switch
+* potentiometer and faders
+* momentary pushbutton = switches
+* Toggle /switch
 
 More 'advanced' parts:
-	LED
-	Midi
-	Sensors
-	Screens
+* LED
+* Midi
+* Sensors
+* Screens
  
 ---
 This is the content of the og md file upon which the pages generate the html file
 leaving for now to use as template
+---
+
 ---
 This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
 

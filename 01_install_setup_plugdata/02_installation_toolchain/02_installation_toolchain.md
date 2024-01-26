@@ -3,6 +3,12 @@ layout: default
 title: Installing Plugdata and the toolchain
 nav_order: 99
 ---
+toc
+
+tldr; 
+- install plugdata and the toolchain
+- create a custom json
+- compile using heavy
 
 # [](#compiling_workflow)Compiling workflow
 
@@ -10,10 +16,19 @@ To get up and running you need to understand the basic workflow for getting your
 
 > In short:
 > 1. Make a compatible Plugdata patch
+> 2. Setup a custom json file that describes to which pins our components are connected
 > 2. Use the compile menu to upload to Daisy.
     - Heavy does the translating.
 
-Plugdata makes this whole process very smooth as everything happens from within the software.
+> 💡 Not all existing patches work as is; they get converted; Many of the fancy visual stuff is useless for Daisy, many patches rely on stuff that isn’t supported, and Daisy also has limited CPU power compared to a computer.
+
+- Patches get converted from pure data to C/C++ code
+- The conversion is done by hvcc https://github.com/Wasted-Audio/hvcc
+- some pd stuff is not supported, there is a [list with all (un)supported items](https://github.com/Wasted-Audio/hvcc/blob/develop/docs/09.supported_vanilla_objects.md)
+- e.g. Plugdata makes a lot of use of the  “else” library but this is not (yet) able to be converted by Heavy 
+- plugdata makes it ‘easy’ when you use ‘compiled mode’ by showing a warning what is or isn’t supported
+
+Plugdata makes this whole process of converting your patches to the Daisy very smooth as everything happens from within the software.
 
 A method that was already made for converting regular pure data patches was made available by Electrosmith in the handy tool pd2dsy. This tool allows to take patches made in pd format and convert/upload them.
 
@@ -21,23 +36,56 @@ However Plugdata has a few advantages over doing this manually via pd2dsy:
 - Installing the needed toolchain is done for you when opening the compile window
 - when using Plugdata in "compile" mode you get instant feedback when something is not compatible by and autocomplete won't show unsupported objects.
 
-> **Use compile mode in Plugdata**, you'll instantly see when you use incompatible objects.
+{: .note }
+> **Using compile mode in Plugdata**, you'll instantly see when you use incompatible objects.
 >  - limitting the auto-complete to hvcc compatible objects;
 >  - and giving warnings when you use in-compatible ones
+
+<img width="145" alt="PlugData Compilation Mode - unsupported object" src="img/heavy_unsupported.png">
+
+<sub>Object error indication when using an unsupported object in Compilation Mode</sub>
+
+<img width="251" alt="PlugData Compilation Mode - unsupported object console warning" src="img/heavy_unsupported_warning.png">
+
+<sub>Console error warning when using an unsupported object in Compilation Mode</sub>
 
 # [](#installing-1)Installing instructions
 
 Install Plugdata for your platform via the [Plugdata website](https://plugdata.org).
 
-After completing the installation go to the compile menu via 'Menu > Compile'
+After completing the installation go to the compile menu via `Menu > Compile`
 
 The first time you open the compile window the program will automatically begin downloading the toolchain.
 
-The download is a one time event, so once the toolchain has completed the download this window will always open instantly.
+The download might take a while but is a one time event, so once the toolchain has completed the download this window will always open instantly.
+
+# [](custom_json)Telling the patch to which pins our hardware components are connected
+
+In Plugdata you'll be referring to your connected components with an object that looks like this `r my_custom_knob @hv.param`
+
+In the compile window we'll point to a custom json file where we list our hardware setup.
+
+![compile window custom board](img\compile_custom_json.png)
+<sub>Note that there are a few other settings that aren't discussed here yet, like 'Patch size' or memory allocations, when starting leave them at the defaults, more info will be shown in the full examples.</sub>
+
+>In the next chapter there's a full example and more elaborate info on setting up this json file.
+
+For now, here's a small example of the content of the json file that's linked to our example  `r my_custom_knob @hv.param`
+
+```json
+   "components": {
+       "my_custom_knob": {
+           "component": "AnalogControl",
+           "pin": 21
+       }
+   } 
+```  
 
 ## About the toolchain and compiling
 
 The toolchain is a collection of needed stuff to 'export' your patches into other formats, this could be straight to C++ or in our case it provides everything we need to compile it onto the Daisy seed.
+
+Follow [this link](https://wasted-audio.github.io/hvcc/) to learn more about Heavy 
 
 > Note the following section is a blunt copy taken from Plugdata's documentation and was copied from Github on 26/01/2024
 

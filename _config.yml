@@ -28,7 +28,6 @@ callouts:
   warning:
     title: Warning
     color: red
-nclude-cache
 
 kramdown:
   syntax_highlighter_opts:

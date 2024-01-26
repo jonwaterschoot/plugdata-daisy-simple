@@ -27,6 +27,14 @@ callouts:
   warning:
     title: Warning
     color: red
+  block-lt:
+    title: Did you know
+    color: grey-lt
+  block-dk:
+    title: Did you know
+    color: grey-dk
+
+
 
 
 kramdown:

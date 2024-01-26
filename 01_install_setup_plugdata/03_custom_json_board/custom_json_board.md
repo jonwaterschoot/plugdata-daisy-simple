@@ -21,6 +21,11 @@ callouts:
     title: Warning
     color: red
 
+{: .block-lt }
+This is the lite block
+
+{: .block-dk }
+This is the dark block
 
 {: .highlight }
 A paragraph is highlight

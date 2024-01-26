@@ -1,7 +1,7 @@
 title: Plugdata and Daisy for starters
 description: A beginners components library for using Plugdata to program a Daisy 
-# remote_theme: just-the-docs/just-the-docs
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
+# theme: just-the-docs
 
 url: https://jonwaterschoot.github.io/plugdata-daisy-simple/
 
@@ -24,7 +24,7 @@ callouts:
     color: green
   note:
     title: Note
-    color: purple
+    color: orange
   warning:
     title: Warning
     color: red

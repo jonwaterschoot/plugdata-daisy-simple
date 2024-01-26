@@ -17,18 +17,19 @@ callouts:
     color: yellow
   important:
     title: Important
-    color: blue
+    color: grey-dk
   new:
     title: New
     color: green
   note:
     title: Note
-    color: purple
+    color: grey-lt
   warning:
     title: Warning
     color: red
 
+
 kramdown:
   syntax_highlighter_opts:
     block:
-      line_numbers: false
+      line_numbers: true

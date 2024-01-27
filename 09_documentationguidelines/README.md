@@ -1,3 +1,9 @@
+---
+layout: default
+title: copy of just the docs markdown kitchen sink Daisy
+nav_exclude: true
+---
+
 # This is a copy of just the docs markdown kitchen sink
 
 This site uses `callout` to highlight, this is not a native markdown feature.

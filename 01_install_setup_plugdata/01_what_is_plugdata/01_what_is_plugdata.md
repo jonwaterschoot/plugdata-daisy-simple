@@ -7,6 +7,8 @@ parent: Installation and setting up Plugdata with Daisy
 
 # What is Plugdata
 
+![Plugdata Synthux Simple Touch example](img\Simpletouch_soundscpr_plugdata_example.jpg)
+
 From the [Plugdata website](https://plugdata.org/):
 
 {: .note }
@@ -40,9 +42,17 @@ Pure Data goes back many years and was made as a tool to help artists create (in
 
 There are many tools out there that use this approach to programming or building electronic stuff, be it analog or digital.
 
-In 3D software like e.g. Blender they’re called nodes, Touchdesigner and [Cables.gl](http://Cables.gl) are both examples of tools that heavily rely on the approach of connecting blocks with virtual cables.
+Blender geometry nodes:
+![Blender geometry nodes](img\Blender_geometry_nodes.png)
+
+
+In 3D software like e.g. Blender they’re called nodes, Touchdesigner and [Cables.gl](http://Cables.gl) are also both examples of tools that heavily rely on the approach of connecting blocks with virtual cables.
+
+![cables.gl, a browser based visual and audio patching tool](img\cablesgl_node_example.jpg)
 
 Maybe you've seen the DAW Bitwig and how the grid can be used to build your own effect or synth.
+
+![Grid Patch preset by Polarity in Bitwig ](img\Bitwig_grid_polarity_particlessmear.jpg)
 
 {: .attention }
 > The common idea is using cables to connect pieces to interact.
@@ -51,15 +61,23 @@ You could go far with this analogy as **all things are a whole of parts**, yet f
 
 If you are guitar player or seen one then you've certainly seen them using pedals to add effects. These pedals are our objects in Plugdata, sometimes our patches are inside the pedal adding extra functions, **tweaking circuits**, other times we just **plug the pedal in without knowing it's inner magic**.
 
+Modep is software that alow you to build virtual pedalboards. Letting you connect a plethora of midi an sound fx in various ways.
+
+![MODEP, virtual audio plugin pedalboard ](img\modep-intro.png)
+
 ### Eurorack
 
-Coming from the music world you might be familiar with modular Eurorack synths. Maybe you’ve even used synths or kits that use Daisy. Or maybe you’ve seen the virtual eurorack systems like VCV rack or Cherry Audio Voltage Modular and many others ([See some listed in this article on attackmagazine.](https://www.attackmagazine.com/reviews/the-best/ten-of-the-best-modular-software/) )
+Coming from the music world you might be familiar with modular Eurorack synths.
+
+![Eurorack photo by David Hilowitz](img\Analog_Synth_Switched_On_Austin_Texas_David_Hilowitz.jpg)
+
+Maybe you’ve even used synths or kits that use Daisy.
 
 ### VCV a virtual eurorack cable spaghetti maker:
 
+Or maybe you’ve seen the virtual eurorack systems like VCV rack, there's also others like Cherry Audio Voltage Modular and many more ...
 
-
-  https://youtu.be/NPErDUlwSlg?list=PL7NZKetd80yrCyyQ2-1J8fad420gL8MAf
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NPErDUlwSlg?si=vqqYQokqqDcMECXk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### *Modular* coding or patching
 

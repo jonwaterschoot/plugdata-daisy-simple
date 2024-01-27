@@ -16,3 +16,21 @@ has_children: true
 
 {: .highlight }
 > 💡 TO DO: Link README for Github, checking links
+
+***
+
+<button class="btn js-toggle-dark-mode">Toggle dark / light theme</button>
+
+<script>
+const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
+
+jtd.addEvent(toggleDarkMode, 'click', function(){
+  if (jtd.getTheme() === 'dark') {
+    jtd.setTheme('light');
+    toggleDarkMode.textContent = 'set dark theme';
+  } else {
+    jtd.setTheme('dark');
+    toggleDarkMode.textContent = 'set light theme';
+  }
+});
+</script>

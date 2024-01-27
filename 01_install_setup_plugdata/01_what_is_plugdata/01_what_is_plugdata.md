@@ -82,3 +82,21 @@ E.g. case in point of using Daisy seed and knob connected to one of the pins:
 
 {: .new }
 We don’t need to know how to make paint, brushes and a canvas to be a proficient painter. We use tools all the time that we couldn't build ourselves.
+
+***
+
+<button class="btn js-toggle-dark-mode">Toggle dark / light theme</button>
+
+<script>
+const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
+
+jtd.addEvent(toggleDarkMode, 'click', function(){
+  if (jtd.getTheme() === 'dark') {
+    jtd.setTheme('light');
+    toggleDarkMode.textContent = 'set dark theme';
+  } else {
+    jtd.setTheme('dark');
+    toggleDarkMode.textContent = 'set light theme';
+  }
+});
+</script>

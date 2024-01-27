@@ -37,23 +37,7 @@ kramdown:
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: "
-<button class="btn js-toggle-dark-mode">Toggle dark / light theme</button>
-
-<script>
-const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
-
-jtd.addEvent(toggleDarkMode, 'click', function(){
-  if (jtd.getTheme() === 'dark') {
-    jtd.setTheme('light');
-    toggleDarkMode.textContent = 'set dark theme';
-  } else {
-    jtd.setTheme('dark');
-    toggleDarkMode.textContent = 'set light theme';
-  }
-});
-</script>
-This site was made by jonwtr based on documentation and other guides found at various sources such as: Electrosmith forum, Daisy Discord, Plugdata website and Discord, Synthux.academy website and Discord, ..."
+footer_content: "This site was made by jonwtr based on documentation and other guides found at various sources such as: Electrosmith forum, Daisy Discord, Plugdata website and Discord, Synthux.academy website and Discord, ..."
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter

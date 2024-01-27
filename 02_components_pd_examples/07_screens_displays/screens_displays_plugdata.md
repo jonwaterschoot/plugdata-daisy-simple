@@ -1,13 +1,16 @@
 ---
 layout: default
-title: LED Plugdata example
-nav_order: 12
+title: Screens and displays - Plugdata examples
+nav_order: 16
 Parent: Components Plugdata examples
 ---
 
-# LED's
+# Screens and displays
 
-To fade or not to fade
+This is to be considered an advanced part compared to connecting a regular knob. 
+
+{: .highlight }
+> 💡 This page isn't set up yet.
 
 Template structure for parts:
   1. Name

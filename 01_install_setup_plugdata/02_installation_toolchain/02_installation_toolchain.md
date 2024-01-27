@@ -2,12 +2,13 @@
 layout: default
 title: Installing Plugdata and the toolchain
 nav_order: 3
+parent: Installation and setting up Plugdata with Daisy
 ---
 {: .new }
->On this page:
->- Install plugdata and the toolchain
->- describe your custom Daisy setup and create a custom json
->- compile using Heavy
+> On this page:
+> - Install plugdata and the toolchain
+> - describe your custom Daisy setup and create a custom json
+> - compile using Heavy
 
 # [](#compiling_workflow)Compiling workflow
 
@@ -26,12 +27,13 @@ There are some caveats, things to consider. Daisy isn't your computer, a patch m
 > 💡 Not all existing patches work as is; they get converted; Many of the fancy visual stuff is useless for Daisy, many patches rely on stuff that isn’t supported, and Daisy also has limited CPU power compared to a computer.
 
 - Patches get converted from pure data to C/C++ code
-- The conversion is done by hvcc https://github.com/Wasted-Audio/hvcc
-- some pd stuff is not supported, there is a [list with all (un)supported items](https://github.com/Wasted-Audio/hvcc/blob/develop/docs/09.supported_vanilla_objects.md)
-- e.g. Plugdata makes a lot of use of the  “else” library but this is not (yet) able to be converted by Heavy 
-- plugdata makes it ‘easy’ when you use ‘compiled mode’ by showing a warning what is or isn’t supported
+- The conversion is done by Heavy (hvcc) https://github.com/Wasted-Audio/hvcc
+- some pd stuff is not supported, there is a [list with all (un)supported items](https://github.com/Wasted-Audio/hvcc/blob/develop/docs/09.supported_vanilla_objects.md).
+- e.g. Plugdata makes a lot of use of e.g. the  “else” library; but this is not (yet) able to be converted by Heavy 
+- Plugdata makes it ‘easy’ when you use ‘compiled mode’ by showing a warning what is or isn’t supported
 
-Plugdata makes this whole process of converting your patches to the Daisy very smooth as everything happens from within the software.
+{: .new }
+> Plugdata makes this whole process of converting your patches to the Daisy very smooth as everything happens from within the software.
 
 A method that was already made for converting regular pure data patches was made available by Electrosmith in the handy tool pd2dsy. This tool allows to take patches made in pd format and convert/upload them.
 
@@ -42,8 +44,8 @@ However Plugdata has a few advantages over doing this manually via pd2dsy:
 - The arduino serial monitor can be a handy tool to debug or read signals that you send to `print`.
 
 {: .highlight }
-> **Using compile mode in Plugdata**, you'll instantly see when you use incompatible objects.
->  - limitting the auto-complete to hvcc compatible objects;
+> 💡 **Using compile mode in Plugdata**, you'll instantly see when you use incompatible objects:
+>  - limiting the auto-complete to hvcc/Heavy compatible objects;
 >  - and giving warnings when you use in-compatible ones
 
 <img width="145" alt="PlugData Compilation Mode - unsupported object" src="img/heavy_unsupported.png">
@@ -63,7 +65,7 @@ Install Plugdata for your platform via the [Plugdata website](https://plugdata.o
 After completing the installation go to the compile menu via `Menu > Compile`
 
 {: .highlight }
-The first time you open the compile window the program will automatically begin downloading the toolchain.
+> 💡 The first time you open the compile window the program will automatically begin downloading the toolchain.
 
 The download might take a while but is a one time event, so once the toolchain has completed the download this window will always open instantly.
 
@@ -79,11 +81,11 @@ In the compile window we'll point to a custom json file where we list our hardwa
 ![compile window custom board](img\compile_custom_json.png)
 
 {: .note }
->Note that there are a few other settings that aren't discussed here yet, like 'Patch size' or memory allocations.
+> Note that there are a few other settings that aren't discussed here yet, like 'Patch size' or memory allocations.
 >
->When starting leave them at the defaults, more info will be shown in the full examples. 
+> When starting leave them at the defaults, more info will be shown in the full examples. 
 >
->In the next chapter there's a full example and more elaborate info on setting up this json file.
+> In the next chapter there's a full example and more elaborate info on setting up this json file.
 
 For now, here's a small example of the content of the json file that's linked to our example  
 > `r my_custom_knob @hv.param`
@@ -97,11 +99,11 @@ For now, here's a small example of the content of the json file that's linked to
    } 
 ```
 
-## About the toolchain and compiling
+## More in depth info about the toolchain and compiling
 
 The toolchain is a collection of needed stuff to 'export' your patches into other formats, this could be straight to C++ or in our case it provides everything we need to compile it onto the Daisy seed.
 
-Follow [this link](https://wasted-audio.github.io/hvcc/) to learn more about Heavy 
+Follow [this link](https://wasted-audio.github.io/hvcc/) to learn more about Heavy.
 
 ***
 

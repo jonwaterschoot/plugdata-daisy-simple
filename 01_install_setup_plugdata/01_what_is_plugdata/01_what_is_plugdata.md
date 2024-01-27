@@ -2,6 +2,7 @@
 layout: default
 title: What is Plugdata
 nav_order: 2
+parent: Installation and setting up Plugdata with Daisy
 ---
 
 # What is Plugdata
@@ -29,7 +30,7 @@ Pure Data goes back many years and was made as a tool to help artists create (in
 
 ### Pure Data - “flavours”
 
-{: .highlight }
+{: .note }
 > **Pure Data** (or just "Pd") is an open source visual programming language for multimedia. Pure Data is developed by Miller Puckette since 1996 and you can find it on [his official website](https://msp.ucsd.edu/) along with the official documentation and other related resources. This is the official "Pd" or "main distribution" and it is also known as "Pd Vanilla", but there are other forks or "flavours".
 >
 > source: intro on puredata.info 

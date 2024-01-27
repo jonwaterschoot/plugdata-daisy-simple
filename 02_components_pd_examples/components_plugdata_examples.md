@@ -2,6 +2,7 @@
 layout: default
 title: Components Plugdata examples
 nav_order: 5
+has_children: true
 ---
 # Plugdata components examples
 
@@ -14,3 +15,6 @@ This folder contains the examples. There are 6 parts, however some parts are mor
 5. midi (usb or via pins)
 6. CV control voltage (To do)
 7. Screens (To do)
+
+{: .highlight }
+> 💡 To do - link README for Github

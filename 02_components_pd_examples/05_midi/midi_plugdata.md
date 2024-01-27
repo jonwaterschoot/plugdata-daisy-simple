@@ -2,6 +2,7 @@
 layout: default
 title: Midi Plugdata examples
 nav_order: 14
+Parent: Components Plugdata examples
 ---
 
 # Midi

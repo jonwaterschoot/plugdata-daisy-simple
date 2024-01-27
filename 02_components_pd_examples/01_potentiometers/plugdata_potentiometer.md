@@ -2,6 +2,7 @@
 layout: default
 title: Potentiometer Plugdata example
 nav_order: 10
+Parent: Components Plugdata examples
 ---
 
 # Potentiometer Plugdata example

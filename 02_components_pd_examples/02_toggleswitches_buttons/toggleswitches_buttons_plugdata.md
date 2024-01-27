@@ -2,6 +2,7 @@
 layout: default
 title: Toggle switches and buttons Plugdata examples
 nav_order: 11
+Parent: Components Plugdata examples
 ---
 
 # Toggle switches and buttons

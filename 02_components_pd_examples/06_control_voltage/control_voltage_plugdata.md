@@ -1,13 +1,16 @@
 ---
 layout: default
-title: LED Plugdata example
-nav_order: 12
+title: Control Voltage - CV - Plugdata examples
+nav_order: 15
 Parent: Components Plugdata examples
 ---
 
-# LED's
+# Control Voltage - CV
 
-To fade or not to fade
+How Daisy can send or receive CV signals over some of it's pins.
+
+{: .highlight }
+> 💡 This page isn't set up yet.
 
 Template structure for parts:
   1. Name

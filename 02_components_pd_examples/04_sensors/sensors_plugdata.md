@@ -2,6 +2,7 @@
 layout: default
 title: Sensors Plugdata examples
 nav_order: 13
+Parent: Components Plugdata examples
 ---
 
 # Toggle switches and buttons

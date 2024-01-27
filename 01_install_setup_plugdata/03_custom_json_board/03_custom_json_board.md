@@ -2,6 +2,7 @@
 layout: default
 title: Setting up a custom json
 nav_order: 4
+parent: Installation and setting up Plugdata with Daisy
 ---
 # Setting up a custom json file to describe your daisy pin setup
 
@@ -11,7 +12,8 @@ As we're compiling from Plugdata the workflow is quasi the same. But just a bit 
 
 {: .attention }
 > The Heavy compiler will output an error when there are spaces in the path or in the file names. This also aplies to any subpatches you might use, or if you are exporting you're compiled patch to disk. 
->{: .warning }
+>
+> {: .warning }
 > - Do not use spaces in file names or in the paths
 > - Do not use capital letters in your custom components names
 

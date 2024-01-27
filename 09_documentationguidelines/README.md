@@ -1,6 +1,6 @@
 # This is a copy of just the docs markdown kitchen sink
 
-This site uses ` callout` to highlight, this is not a native markdown feature.
+This site uses `callout` to highlight, this is not a native markdown feature.
 
 ```
 callouts:
@@ -34,6 +34,7 @@ callouts:
 > This is .new - green
 
 ```
+
 # Higlighting callout examples:
 
 {: .note}
@@ -57,7 +58,7 @@ callouts:
 > {: .warning }
 > This is .warning - red, inside another block
 
-<button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
+<button class="btn js-toggle-dark-mode">Toggle dark / light theme</button>
 
 <script>
 const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
@@ -65,10 +66,10 @@ const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
 jtd.addEvent(toggleDarkMode, 'click', function(){
   if (jtd.getTheme() === 'dark') {
     jtd.setTheme('light');
-    toggleDarkMode.textContent = 'Preview dark color scheme';
+    toggleDarkMode.textContent = 'set dark theme';
   } else {
     jtd.setTheme('dark');
-    toggleDarkMode.textContent = 'Return to the light side';
+    toggleDarkMode.textContent = 'set light theme';
   }
 });
 </script>

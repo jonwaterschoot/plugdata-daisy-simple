@@ -1,25 +1,26 @@
 ---
 layout: default
 title: Installing Plugdata and the toolchain
-nav_order: 99
+nav_order: 3
 ---
-toc
-
-tldr; 
-- install plugdata and the toolchain
-- create a custom json
-- compile using heavy
+{: .new }
+>On this page:
+>- Install plugdata and the toolchain
+>- describe your custom Daisy setup and create a custom json
+>- compile using Heavy
 
 # [](#compiling_workflow)Compiling workflow
 
 To get up and running you need to understand the basic workflow for getting your Patches from Plugdata compiled onto the Daisy seed microcontroler.
 
-{: .note }
-> In short:
-> 1. Make a compatible Plugdata patch
-> 2. Setup a custom json file that describes to which pins our components are connected
-> 2. Use the compile menu to upload to Daisy.
+{: .attention }
+> In short the workflow to go from patch to Daisy:
+> 1. Make a **compatible** Plugdata patch
+> 2. Setup a **custom json** file that describes to which pins our components are connected
+> 2. Use the **compile** menu to upload to Daisy.
     - Heavy does the translating.
+
+There are some caveats, things to consider. Daisy isn't your computer, a patch made for one device won't just automagically work on your device. We need to look at some software details and we need to compare the hardware.
 
 {: .highlight }
 > 💡 Not all existing patches work as is; they get converted; Many of the fancy visual stuff is useless for Daisy, many patches rely on stuff that isn’t supported, and Daisy also has limited CPU power compared to a computer.
@@ -37,6 +38,8 @@ A method that was already made for converting regular pure data patches was made
 However Plugdata has a few advantages over doing this manually via pd2dsy:
 - Installing the needed toolchain is done for you when opening the compile window
 - when using Plugdata in "compile" mode you get instant feedback when something is not compatible by and autocomplete won't show unsupported objects.
+- if you've already setup the Arduino ide to program your Daisy you might be surprised how little setup is needed. Plugdata will fetch everything you need as the Toolchain. 
+- The arduino serial monitor can be a handy tool to debug or read signals that you send to `print`.
 
 {: .highlight }
 > **Using compile mode in Plugdata**, you'll instantly see when you use incompatible objects.
@@ -47,31 +50,40 @@ However Plugdata has a few advantages over doing this manually via pd2dsy:
 
 <sub>Object error indication when using an unsupported object in Compilation Mode</sub>
 
+
 <img width="251" alt="PlugData Compilation Mode - unsupported object console warning" src="img/heavy_unsupported_warning.png">
 
 <sub>Console error warning when using an unsupported object in Compilation Mode</sub>
 
-# [](#installing-1)Installing instructions
+
+# [](#installing-1)Installation instructions
 
 Install Plugdata for your platform via the [Plugdata website](https://plugdata.org).
 
 After completing the installation go to the compile menu via `Menu > Compile`
 
+{: .highlight }
 The first time you open the compile window the program will automatically begin downloading the toolchain.
 
 The download might take a while but is a one time event, so once the toolchain has completed the download this window will always open instantly.
 
 # [](custom_json)Telling the patch to which pins our hardware components are connected
 
-In Plugdata you'll be referring to your connected components with an object that looks like this `r my_custom_knob @hv.param`
+In Plugdata you'll be referring to your connected components with an object that looks like this:
+> `r my_custom_knob @hv.param`
+
+Typing this into an object in Plugdata will create a block with an outlet that outputs a value from `0 to 1`  (e.g. 0.1 or 0.891)
 
 In the compile window we'll point to a custom json file where we list our hardware setup.
 
 ![compile window custom board](img\compile_custom_json.png)
-<sub>Note that there are a few other settings that aren't discussed here yet, like 'Patch size' or memory allocations, when starting leave them at the defaults, more info will be shown in the full examples.</sub>
 
 {: .note }
-> In the next chapter there's a full example and more elaborate info on setting up this json file.
+>Note that there are a few other settings that aren't discussed here yet, like 'Patch size' or memory allocations.
+>
+>When starting leave them at the defaults, more info will be shown in the full examples. 
+>
+>In the next chapter there's a full example and more elaborate info on setting up this json file.
 
 For now, here's a small example of the content of the json file that's linked to our example  
 > `r my_custom_knob @hv.param`

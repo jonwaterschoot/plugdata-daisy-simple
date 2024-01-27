@@ -6,64 +6,31 @@ nav_order: 99
 # Setting up a custom json file to describe your daisy pin setup
 
 callouts:
+  note:
+    color: grey-dk
+  attention:
+    color: grey-lt    
   highlight:
     color: yellow
-  important:
-    title: Important
-    color: blue
-  new:
-    title: New
-    color: green
-  note:
-    title: Note
-    color: purple
   warning:
-    title: Warning
     color: red
+  new:
+    color: green
 
-{: .block-lt }
-This is the lite block
+{: .note }
+A paragraph is a note
 
-{: .block-dk }
-This is the dark block
+{: .attention }
+A paragraph is a note
 
 {: .highlight }
-A paragraph is highlight
+A paragraph is highlighted
 
-{: .important }
-A paragraph
+{: .warning }
+A paragraph is important
 
 {: .new }
 A paragraph is new
-
-{: .note }
-A paragraph is note
-
-{: .warning }
-A paragraph is warning
-
-
-
-{: .note-title }
-> My note title is NOTE
->
-> A paragraph with a custom title callout
-
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
 
 > {: .new }
 > > A paragraph
@@ -72,7 +39,7 @@ A paragraph is warning
 > >
 > > The last paragraph
 
-{: .important }
+{: .note }
 > {: .opaque }
 > <div markdown="block">
 > {: .warning }

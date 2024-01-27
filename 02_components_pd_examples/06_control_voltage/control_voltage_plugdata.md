@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Control Voltage - CV - Plugdata examples
+title: Control Voltage - CV
 nav_order: 15
-Parent: Components Plugdata examples
+parent: Components Plugdata examples
 ---
 
 # Control Voltage - CV

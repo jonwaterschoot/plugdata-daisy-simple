@@ -1,7 +1,7 @@
 ---
+layout: default
 title: Home
-layout: home
-index: 1
+nav_order: 1
 ---
 # This is a work in progress
 

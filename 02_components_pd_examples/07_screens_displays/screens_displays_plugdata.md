@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Screens and displays - Plugdata examples
+title: Screens and displays
 nav_order: 16
-Parent: Components Plugdata examples
+parent: Components Plugdata examples
 ---
 
 # Screens and displays

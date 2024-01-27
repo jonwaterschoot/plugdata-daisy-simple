@@ -1,11 +1,15 @@
 ---
 layout: default
-title: Sensors Plugdata examples
+title: Sensors
 nav_order: 13
-Parent: Components Plugdata examples
+parent: Components Plugdata examples
 ---
 
-# Toggle switches and buttons
+# Sensors
+
+Various sensors can be connected and are supported. There's a list you can consult with a description of the available parameters at pd2dsy
+
+This page will use the MPR121 touch sensor as an example.
 
 Template structure for parts:
   1. Name

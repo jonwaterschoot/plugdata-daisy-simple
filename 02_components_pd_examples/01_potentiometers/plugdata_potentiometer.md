@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Potentiometer Plugdata example
+title: Potentiometer
 nav_order: 10
-Parent: Components Plugdata examples
+parent: Components Plugdata examples
 ---
 
 # Potentiometer Plugdata example

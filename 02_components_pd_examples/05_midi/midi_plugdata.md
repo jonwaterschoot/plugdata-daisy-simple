@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Midi Plugdata examples
+title: Midi
 nav_order: 14
-Parent: Components Plugdata examples
+parent: Components Plugdata examples
 ---
 
 # Midi

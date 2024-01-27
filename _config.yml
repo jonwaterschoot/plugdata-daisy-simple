@@ -1,11 +1,11 @@
 title: Plugdata and Daisy for starters
 description: A beginners components example library for using Plugdata to program a Daisy 
-theme: just-the-docs
+remote_theme: just-the-docs
 
 url: https://jonwaterschoot.github.io/plugdata-daisy-simple/
 
 aux_links:
-  Synthux: https://www.synthux.academy/
+  Synthux: https://www.synthux.academy
   Plugdata: https://plugdata.org
   site by jonwtr: https://jonwtr.be
 

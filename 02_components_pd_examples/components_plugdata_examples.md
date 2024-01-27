@@ -4,6 +4,7 @@ title: Components Plugdata examples
 nav_order: 5
 has_children: true
 ---
+
 # Plugdata components examples
 
 This folder contains the examples. There are 6 parts, however some parts are more complex so the info won't be as complete.

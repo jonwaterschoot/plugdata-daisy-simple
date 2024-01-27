@@ -1,11 +1,11 @@
 ---
 layout: default
-title: LED Plugdata example
+title: LED's
 nav_order: 12
-Parent: Components Plugdata examples
+parent: Components Plugdata examples
 ---
 
-# LED's
+# LED's - light emitting diodes
 
 To fade or not to fade
 

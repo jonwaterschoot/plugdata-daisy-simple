@@ -6,12 +6,12 @@ parent: Installation and setting up Plugdata with Daisy
 ---
 # Setting up a custom json file to describe your daisy pin setup
 
-There's a [Guide for pd2dsy](https://forum.electro-smith.com/t/quick-guide-on-setting-up-a-custom-json-file-for-pd2dsy-oopsy/4021) by Takumi Ogata on the Daisy forum.
+There's a comprehensive [Guide for pd2dsy](https://forum.electro-smith.com/t/quick-guide-on-setting-up-a-custom-json-file-for-pd2dsy-oopsy/4021) by Takumi Ogata on the Daisy forum.
 
-As we're compiling from Plugdata the workflow is quasi the same. But just a bit easier as we do the compile process from within Plugdata. We do need to make a separate file that we select in the compile window: the custom json. And that has to follow the same principles.
+Though we're compiling from Plugdata the workflow is quasi the same. Everything is just a bit easier as we do the compile process from within Plugdata. However we do need to make a separate file that we select in the compile window: the custom json. And that has to follow the same principles.
 
 {: .attention }
-> The Heavy compiler will output an error when there are spaces in the path or in the file names. This also aplies to any subpatches you might use, or if you are exporting you're compiled patch to disk. 
+> The Heavy compiler will output an error when there are spaces in the path or in the file names. This also applies to any subpatches you might use, or if you are exporting you're compiled patch to disk. 
 >
 > {: .warning }
 > - Do not use spaces in file names or in the paths
@@ -23,7 +23,15 @@ The custom json file will be used in the compile screen where we select it as ou
 
 There are already some board configurations available in the presets, e.g. Electrosmith's own Pod, Patch(init), there's also a Synthux Simple board.
 
-On this page we'll use the Synthux Simple PCB as the example. Note that your build doesn't need to use the exact naming of the components, the custom json can have any name.
+In this websites examples we'll use the Synthux Simple PCB pins. Note that your build doesn't need to use the exact naming of the components, the custom json can have any name.
+
+{: .new }
+> Custom naming:
+> - You can name your knobs etc. how you want, just don't use CAPS or spaces.
+>   - it could be `myfatfilter` instead of `knob1` 
+> - You can choose a custom name for your board
+> - You can choose the filename of the custom json
+>   - again no spaces!
 
 1. We make a custom json file (you can do this in a text editor)
 2. In this file we tell the compiler to which pins our components are connected.
@@ -31,11 +39,81 @@ On this page we'll use the Synthux Simple PCB as the example. Note that your bui
 
 ***
 
+Here's a basic file with a few components setup.
+
 ```json
-example components
+{
+   "name": "myCustomDaisySynthFX",
+   "som": "seed",
+   "audio": {
+     "channels": 2
+   },
+
+   "components": {
+       "faderleft": {
+           "component": "AnalogControl",
+           "pin": 21
+       },
+       "knob1": {
+           "component": "AnalogControl",
+           "pin": 16
+       },
+       "toggle2up": {
+           "component": "Switch",
+           "pin": 7
+       },
+       "toggle2down": {
+           "component": "Switch",
+           "pin": 6
+       },
+       "recled": {
+           "component": "Led",
+           "pin": 23
+       }
+
+
+   }
+}
 ```
-Link to Daisy Github going over the components and types
+
 ***
+
+This file has some in info at the top about our board.
+
+E.g. the type of the connected board is a Seed, as in Daisy Seed:
+
+```json
+   "som": "seed",
+```
+
+When using other types of things connected to the board, they get a separate section. E.g. a led driver or the MPR121 touch sensor.
+
+```json
+   "parents": {
+     "mpr121_driver": {
+       "component": "Mpr121"
+       }
+   },
+```
+
+And there's a list with the components and their pin types.
+
+e.g. the analog potentiometers like knobs and faders:
+```json
+       "faderleft": {
+           "component": "AnalogControl",
+           "pin": 21
+       },
+```
+
+
+By listing this correctly the right setup for the type of pins will be setup for you.
+
+If you've used Arduino's think of the term pullup resistor.
+
+The Daisy seed has a few pins that can have multiple setups so we need to tell the hardware how to activate them.
+
+Therefore we need to verify the type of pin we need: e.g. for a potentiometer we need an Analog pin.
 
 ## Pin numbers
 
@@ -43,13 +121,13 @@ Pin numbers can become confusing, therefor I've made this overview.
 
 ![Pins Table overview](img\Pins-Table_overview_Daisy_plugdata.png)
 
-[Link to spreadsheet](https://docs.google.com/spreadsheets/d/1xtg_s1tk8tm-6qNkBLFc6V1L_Mpmu-PCOvv7qEyr9mU/edit?usp=sharing) showing the pin numbers used in on the Daisy board, Plugdata, Synthux, ...
+Follow this [link to the spreadsheet](https://docs.google.com/spreadsheets/d/1xtg_s1tk8tm-6qNkBLFc6V1L_Mpmu-PCOvv7qEyr9mU/edit?usp=sharing) showing the pin numbers used in on the Daisy board, Plugdata, Synthux, ...
 
 When you're making your own board it can be a handy tool to make your own copy and list your own connections and custom names.
 
 ***
 
-Here's a piece of the [linked table](https://docs.google.com/spreadsheets/d/1xtg_s1tk8tm-6qNkBLFc6V1L_Mpmu-PCOvv7qEyr9mU/edit?usp=sharing) with the pins of the Simple Touch as an example:
+Here's a part of that [linked table](https://docs.google.com/spreadsheets/d/1xtg_s1tk8tm-6qNkBLFc6V1L_Mpmu-PCOvv7qEyr9mU/edit?usp=sharing) with the pins of the Simple Touch as an example:
 
 |Daisy seed pin numbers on the board|Daisy pin names digital|Daisy pin names analog|Pin names Synthux|Pin numbers for Simple Touch to use in Plugdata|Simple touch mpr121 Description|Custom names in my custom json see my notes here:|
 |:----|:----|:----|:----|:----|:----|:----|
@@ -74,47 +152,108 @@ Here's a piece of the [linked table](https://docs.google.com/spreadsheets/d/1xtg
 
 ***
 
-Synthux is using the ‘S’ number as a way to refer to the connections on their PCB. This is convenient for them to allow easy mounting of the Daisy on the back of the Simple PCB.
+Synthux is using the ‘S’ number as a way to refer to the connections on their PCB. This is convenient for allowing to easily mount the Daisy on the back of the Simple PCB.
 
-***
+## Types of components and the way they communicate
 
-callouts:
-  note:
-    color: grey-dk
-  attention:
-    color: grey-lt    
-  highlight:
-    color: yellow
-  warning:
-    color: red
-  new:
-    color: green
+In the examples of the components in the next chapter you'll find the json instructions for each specific component.
 
-{: .note }
-A paragraph is a note
+There's a full list made by Electrosmith with all the supported components and all the parameters and ways you can recieve or send info from and to them.
 
-{: .attention }
-A paragraph is a note
+For example, the toggle switch has the options _fall for when a pin get's disconnected. Or a _press function that will send a specific type of message that's different from the regular use of the name.
 
-{: .highlight }
-A paragraph is highlighted
+|Switch|---|Returns a bang on the signal's rising edge (i.e. when the switch is actuated).|
+|:----|:----|:----|
+|Switch|_press|Returns a float representing the current state (1 = pressed, 0 = not pressed)|
+|Switch|_fall|Returns a bang on the signal's falling edge (i.e. when the switch is released).|
 
-{: .warning }
-A paragraph is important
+See the full list on the [pd2dsy Github page](https://github.com/electro-smith/pd2dsy?tab=readme-ov-file#interacting-with-the-daisy-io)
 
-{: .new }
-A paragraph is new
+## Download / link / full example
 
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
+Full json file 'Simple' that is included in Plugdata can be [downloaded from Github](https://github.com/plugdata-team/plugdata-heavy-toolchain/blob/main/resources/simple.json)
 
-{: .note }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
+Note:
+This is the file from plugdata's Github but I've added Toggle Switches on pins 6 to 9
+
+```json
+{
+    "name": "Simple",
+    "som": "seed",
+    "defines": {
+        "OOPSY_TARGET_HAS_MIDI_INPUT": 1
+    },
+    "audio": {
+        "channels": 2
+    },
+    "components": {
+        "knob1": {
+            "component": "AnalogControl",
+            "pin": 15
+        },
+        "knob2": {
+            "component": "AnalogControl",
+            "pin": 16
+        },
+        "knob3": {
+            "component": "AnalogControl",
+            "pin": 17
+        },
+        "knob4": {
+            "component": "AnalogControl",
+            "pin": 18
+        },
+        "knob5": {
+            "component": "AnalogControl",
+            "pin": 19
+        },
+        "knob6": {
+            "component": "AnalogControl",
+            "pin": 20
+        },
+        "knob7": {
+            "component": "AnalogControl",
+            "pin": 21
+        },
+        "knob8": {
+            "component": "AnalogControl",
+            "pin": 22
+        },
+        "knob9": {
+            "component": "AnalogControl",
+            "pin": 23
+        },
+        "knob10": {
+            "component": "AnalogControl",
+            "pin": 24
+        },
+        "knob11": {
+            "component": "AnalogControl",
+            "pin": 25
+        },
+        "knob12": {
+            "component": "AnalogControl",
+            "pin": 28
+        },
+        "toggle1left": {
+           "component": "Switch",
+           "pin": 8
+       },
+       "toggle1right": {
+           "component": "Switch",
+           "pin": 9
+       },
+       "toggle2up": {
+           "component": "Switch",
+           "pin": 7
+       },
+       "toggle2down": {
+           "component": "Switch",
+           "pin": 6
+       }
+    },
+    "aliases": {
+        "knob": "knob1"
+    }
+}
+```

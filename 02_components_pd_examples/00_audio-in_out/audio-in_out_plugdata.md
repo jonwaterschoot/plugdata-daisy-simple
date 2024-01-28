@@ -11,6 +11,8 @@ First things first: getting sound in or out of daisy. These are the easiest part
 
 ## Function: Audio in - ADC / audio out DAC
 
+![Sound input and output](img\adc-dac.png)
+
 This is pretty obvious and self explanatory. Daisy has a few pins that talk to plugdata via the blocks `adc~` and `dac~`.
 
 ADC stands for Analog to Digital Converter = this is the input, e.g. microphone, another synth, ...
@@ -51,6 +53,14 @@ The common multi footprint of the Simple board connectors will allow for a mono 
 When using these standard pins on the Daisy, 16 - 19, audio input / output pins 
 
 If you only need mono sound you only connect 1 of each as needed.
+
+## Plugdata example
+
+## links / references / sources
+
+link to e.g. Thonk?
+
+---
 
   2. function - what can it do
   3. what it looks like

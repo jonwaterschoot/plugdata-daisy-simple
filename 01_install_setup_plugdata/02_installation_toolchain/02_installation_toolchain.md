@@ -12,6 +12,8 @@ parent: Installation and setting up Plugdata with Daisy
 
 # [](#compiling_workflow)Compiling workflow
 
+![Compiler Screenshot](img\Plugdata_compiler_scrnsht.jpg)
+
 To get up and running you need to understand the basic workflow for getting your Patches from Plugdata compiled onto the Daisy seed microcontroler.
 
 {: .attention }
@@ -24,22 +26,37 @@ To get up and running you need to understand the basic workflow for getting your
 There are some caveats, things to consider. Daisy isn't your computer, a patch made for one device won't just automagically work on your device. We need to look at some software details and we need to compare the hardware.
 
 {: .highlight }
-> 💡 Not all existing patches work as is; they get converted; Many of the fancy visual stuff is useless for Daisy, many patches rely on stuff that isn’t supported, and Daisy also has limited CPU power compared to a computer.
+> 💡 Not all existing patches work as is; they get converted; Many of the fancy visual stuff is useless for Daisy, many patches rely on things that are not supported, and Daisy also has limited CPU power compared to a computer.
 
-- Patches get converted from pure data to C/C++ code
+## Video by Wasted Audio - maintainer of the Heavy project.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XKohpWGTKsQ?si=dMKeRCWfmMe69XDL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Heavy Compiler Collection (hvcc) and Plugdata
+
+Some main takeaways:
+
+- Patches get converted from pure data to C++ code
 - The conversion is done by Heavy (hvcc) https://github.com/Wasted-Audio/hvcc
 - some pd stuff is not supported, there is a [list with all (un)supported items](https://github.com/Wasted-Audio/hvcc/blob/develop/docs/09.supported_vanilla_objects.md).
 - e.g. Plugdata makes a lot of use of e.g. the  “else” library; but this is not (yet) able to be converted by Heavy 
 - Plugdata makes it ‘easy’ when you use ‘compiled mode’ by showing a warning what is or isn’t supported
 
 {: .new }
-> Plugdata makes this whole process of converting your patches to the Daisy very smooth as everything happens from within the software.
+> Plugdata makes this whole process of making and converting your patches to the Daisy very smooth as everything happens from within the software.
 
-A method that was already made for converting regular pure data patches was made available by Electrosmith in the handy tool pd2dsy. This tool allows to take patches made in pd format and convert/upload them.
+### pd2dsy and Plugdata?
 
-However Plugdata has a few advantages over doing this manually via pd2dsy:
+A method that was already made separately from plugdata for converting regular pure data patches was made available by Electrosmith in the handy tool pd2dsy. This tool allows to take patches made in pd format and convert/upload them.
+
+The [Github repository of pd2dsy](https://github.com/electro-smith/pd2dsy) is a good resource to check various documentation.
+
+Plugdata has basically built-in the pd2dsy method. Making it unnecessary to leave the software to compile. So you do not need to also install that program as well.
+
+### Plugdata advantages over pd2dsy
+
+Plugdata has a few other advantages over compiling *manually* via pd2dsy:
 - Installing the needed toolchain is done for you when opening the compile window
-- when using Plugdata in "compile" mode you get instant feedback when something is not compatible by and autocomplete won't show unsupported objects.
+- When using Plugdata in "compile" mode you get instant feedback when something is not compatible by and autocomplete won't show unsupported objects.
 - if you've already setup the Arduino ide to program your Daisy you might be surprised how little setup is needed. Plugdata will fetch everything you need as the Toolchain. 
 - The arduino serial monitor can be a handy tool to debug or read signals that you send to `print`.
 
@@ -71,6 +88,8 @@ The download might take a while but is a one time event, so once the toolchain h
 
 # [](custom_json)Telling the patch to which pins our hardware components are connected
 
+The complete description on setting up a custom json can be found in the next chapter: [Setting up a custom json](01_install_setup_plugdata\03_custom_json_board\03_custom_json_board.md)
+
 In Plugdata you'll be referring to your connected components with an object that looks like this:
 > `r my_custom_knob @hv.param`
 
@@ -85,7 +104,7 @@ In the compile window we'll point to a custom json file where we list our hardwa
 >
 > When starting leave them at the defaults, more info will be shown in the full examples. 
 >
-> In the next chapter there's a full example and more elaborate info on setting up this json file.
+> In the next chapter, [Setting up a custom json](01_install_setup_plugdata\03_custom_json_board\03_custom_json_board.md) there's a full example and more elaborate info on setting up this json file.
 
 For now, here's a small example of the content of the json file that's linked to our example  
 > `r my_custom_knob @hv.param`

@@ -5,6 +5,15 @@ nav_order: 2
 parent: Installation and setting up Plugdata with Daisy
 ---
 
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 # What is Plugdata
 
 ![Plugdata Synthux Simple Touch example](img\Simpletouch_soundscpr_plugdata_example.jpg)

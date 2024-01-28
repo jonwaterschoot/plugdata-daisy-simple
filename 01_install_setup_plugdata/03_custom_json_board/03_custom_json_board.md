@@ -4,11 +4,33 @@ title: Setting up a custom json
 nav_order: 4
 parent: Installation and setting up Plugdata with Daisy
 ---
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 # Setting up a custom json file to describe your daisy pin setup
 
-There's a comprehensive [Guide for pd2dsy](https://forum.electro-smith.com/t/quick-guide-on-setting-up-a-custom-json-file-for-pd2dsy-oopsy/4021) by Takumi Ogata on the Daisy forum.
+![Synthux Simple](img\Synthux_Simple_Daisy.jpg)
+<sub>So you've connected some potentiometers on the Synthux Simple matrix to the analog pins of the Daisy, now what?</sub>
 
-Though we're compiling from Plugdata the workflow is quasi the same. Everything is just a bit easier as we do the compile process from within Plugdata. However we do need to make a separate file that we select in the compile window: the custom json. And that has to follow the same principles.
+There already exists a comprehensive [guide for pd2dsy](https://forum.electro-smith.com/t/quick-guide-on-setting-up-a-custom-json-file-for-pd2dsy-oopsy/4021) by Takumi Ogata on the Daisy forum.
+
+And although we're compiling from Plugdata, the workflow is quasi the same. Even better, everything is just a bit easier as we do the compile process from within Plugdata. We do however need to make a separate file that we select in the compile window: **the custom json**. And that has to follow the same principles.
+
+{: .new}
+> As a recap:
+> - connect components to the Daisy board
+> - setup a json file that tells the compiler which pins are used
+> - make a patch in Plugdata with your new custom setup
+> - uploading your code to the board is done by compiling: 
+>     - Heavy Compiler Collection (hvcc) helps converting your code to C++
+
 
 {: .attention }
 > The Heavy compiler will output an error when there are spaces in the path or in the file names. This also applies to any subpatches you might use, or if you are exporting you're compiled patch to disk. 
@@ -83,7 +105,7 @@ This file has some in info at the top about our board.
 E.g. the type of the connected board is a Seed, as in Daisy Seed:
 
 ```json
-   "som": "seed",
+   "som": "seed"
 ```
 
 When using other types of things connected to the board, they get a separate section. E.g. a led driver or the MPR121 touch sensor.
@@ -93,7 +115,7 @@ When using other types of things connected to the board, they get a separate sec
      "mpr121_driver": {
        "component": "Mpr121"
        }
-   },
+   }
 ```
 
 And there's a list with the components and their pin types.
@@ -103,7 +125,7 @@ e.g. the analog potentiometers like knobs and faders:
        "faderleft": {
            "component": "AnalogControl",
            "pin": 21
-       },
+       }
 ```
 
 
@@ -111,13 +133,13 @@ By listing this correctly the right setup for the type of pins will be setup for
 
 If you've used Arduino's think of the term pullup resistor.
 
-The Daisy seed has a few pins that can have multiple setups so we need to tell the hardware how to activate them.
+The Daisy seed has a few pins that can have multiple setups so we need to tell the hardware how to activate or handle them.
 
 Therefore we need to verify the type of pin we need: e.g. for a potentiometer we need an Analog pin.
 
 ## Pin numbers
 
-Pin numbers can become confusing, therefor I've made this overview.
+Pin numbers can become confusing, therefor I've made this overview table.
 
 ![Pins Table overview](img\Pins-Table_overview_Daisy_plugdata.png)
 
@@ -127,7 +149,7 @@ When you're making your own board it can be a handy tool to make your own copy a
 
 ***
 
-Here's a part of that [linked table](https://docs.google.com/spreadsheets/d/1xtg_s1tk8tm-6qNkBLFc6V1L_Mpmu-PCOvv7qEyr9mU/edit?usp=sharing) with the pins of the Simple Touch as an example:
+Here's a part of that [linked table](https://docs.google.com/spreadsheets/d/1xtg_s1tk8tm-6qNkBLFc6V1L_Mpmu-PCOvv7qEyr9mU/edit?usp=sharing) with the pins of the Simple Touch and some custom setup as an example:
 
 |Daisy seed pin numbers on the board|Daisy pin names digital|Daisy pin names analog|Pin names Synthux|Pin numbers for Simple Touch to use in Plugdata|Simple touch mpr121 Description|Custom names in my custom json see my notes here:|
 |:----|:----|:----|:----|:----|:----|:----|
@@ -150,31 +172,89 @@ Here's a part of that [linked table](https://docs.google.com/spreadsheets/d/1xtg
 |31|D24|A9| | | | |
 			
 
-***
-
-Synthux is using the ‘S’ number as a way to refer to the connections on their PCB. This is convenient for allowing to easily mount the Daisy on the back of the Simple PCB.
+{: .highlight }
+> Synthux is using the ‘S’ number as a way to refer to the connections on their PCB. This is convenient for allowing to easily mount the Daisy on the back of the Simple PCB.
 
 ## Types of components and the way they communicate
 
 In the examples of the components in the next chapter you'll find the json instructions for each specific component.
 
-There's a full list made by Electrosmith with all the supported components and all the parameters and ways you can recieve or send info from and to them.
+![Simple components footprint](img\Simple_footprint_diagram_S-p-800.jpeg)
+<sub>illustration from Synthux website</sub>
 
-For example, the toggle switch has the options _fall for when a pin get's disconnected. Or a _press function that will send a specific type of message that's different from the regular use of the name.
+There's a full list made by Electrosmith with all the supported components and all the parameters and ways you can receive or send info from and to them. 
+
+In Plugdata you will need things like `float` numbers, or you might need a `bang`, which is a trigger that activates something. 
+
+For example, the standard message a toggle switch, which is basically a type of button, will send is a bang. However we also have the option to add something to our name of the switch so Daisy will send a different type of message. The Switch has the options `_fall` for when a pin gets disconnected. Or a `_press` function that will send a specific type of message, a float of either 0 or 1.
+
+![Plugdata Toggle Switches _press _fall](img\PlugdataToggleSwitches_press_fall.png)
 
 |Switch|---|Returns a bang on the signal's rising edge (i.e. when the switch is actuated).|
 |:----|:----|:----|
 |Switch|_press|Returns a float representing the current state (1 = pressed, 0 = not pressed)|
 |Switch|_fall|Returns a bang on the signal's falling edge (i.e. when the switch is released).|
 
-See the full list on the [pd2dsy Github page](https://github.com/electro-smith/pd2dsy?tab=readme-ov-file#interacting-with-the-daisy-io)
+{ .highlight}
+> Components can send different types of messages by adding strings to their names in plugdata.
+> - See the full list on the [pd2dsy Github page](https://github.com/electro-smith/pd2dsy?tab=readme-ov-file#interacting-with-the-daisy-io)
+> - In the examples on this site we'll demonstrate some of these
+
+## Aliases
+
+It is possible to refer to your components by using aliases which you setup in the json file.
+
+See this excerpt of code that is used in [custom_json_example.json from pd2dsy on their Github](https://github.com/electro-smith/pd2dsy/blob/master/util/custom_json_example.json)
+
+```json
+      "aliases": {
+        "gate": "gatein1",
+        "gate1": "gatein1",
+        "gate2": "gatein2",
+        "cvout": "cvout1",
+        "encswitch": "encoder_rise",
+        "enp": "encoder_press",
+        "press": "encoder_press",
+        "knob": "knob1",
+        "ctrl": "knob1",
+        "ctrl1": "knob1",
+        "ctrl2": "knob2",
+        "ctrl3": "knob3",
+        "ctrl4": "knob4"
+      }
+```
+
+{ .attention}
+> Note that for the encoder the `_rise` and `_press` have been added inside the json already, making them available in Plugdata by the alias.
+>
+> These details could help you make your patch more readable or clearly defined.
 
 ## Download / link / full example
+
+Though you'll probably end up tweaking or writing your own, there are a few pre-made versions of the custom json files you can find.
+
+### pd2dsy
+
+The pure data to daisy - [pd2dsy](https://github.com/electro-smith/pd2dsy) section on Github contains lots of useful info on the different components and the massages they send or receive.
+
+As linked above: [custom_json_example.json from pd2dsy on their Github](https://github.com/electro-smith/pd2dsy/blob/master/util/custom_json_example.json)
+
+### json2daisy
+
+The Utility for converting JSON board definitions into valid, libDaisy compatible C++ board support files for the Daisy platform.
+
+You won't need this, as its not a separate tool, but there are some examples for the different Elecrosmith boards/configurations like Pod, Patch, Field, ...
+
+[json2daisy resources on Github](https://github.com/electro-smith/json2daisy/tree/main/src/json2daisy/resources) has all the Electrosmith configurations.
+
+### Plugdata boards resources
+
+
 
 Full json file 'Simple' that is included in Plugdata can be [downloaded from Github](https://github.com/plugdata-team/plugdata-heavy-toolchain/blob/main/resources/simple.json)
 
 Note:
-This is the file from plugdata's Github but I've added Toggle Switches on pins 6 to 9
+This is the file from plugdata's Github but I've added Toggle Switches on pins 6 to 9 at the end:
 
 ```json
 {

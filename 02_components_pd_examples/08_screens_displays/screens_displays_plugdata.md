@@ -1,13 +1,13 @@
 ---
 layout: default
 title: Screens and displays
-nav_order: 16
+nav_order: 17
 parent: Components Plugdata examples
 ---
 
 # Screens and displays
 
-This is to be considered an advanced part compared to connecting a regular knob. 
+This is to be considered an advanced part compared to connecting e.g. a regular knob. 
 
 {: .highlight }
 > 💡 This page isn't set up yet.

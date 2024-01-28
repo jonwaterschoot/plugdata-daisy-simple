@@ -4,11 +4,15 @@ title: Installing Plugdata and the toolchain
 nav_order: 3
 parent: Installation and setting up Plugdata with Daisy
 ---
-{: .new }
-> On this page:
-> - Install plugdata and the toolchain
-> - describe your custom Daisy setup and create a custom json
-> - compile using Heavy
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 # [](#compiling_workflow)Compiling workflow
 
@@ -16,7 +20,7 @@ parent: Installation and setting up Plugdata with Daisy
 
 To get up and running you need to understand the basic workflow for getting your Patches from Plugdata compiled onto the Daisy seed microcontroler.
 
-{: .attention }
+{: .new }
 > In short the workflow to go from patch to Daisy:
 > 1. Make a **compatible** Plugdata patch
 > 2. Setup a **custom json** file that describes to which pins our components are connected

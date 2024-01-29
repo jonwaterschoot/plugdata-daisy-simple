@@ -55,7 +55,7 @@ Steps to follow:
 - When compiling you activate the serial debugging via USB
 - connect to a serial monitor
   - If you have already setup Arduino you can use it's serial monitor.
-[More info at its own page.](01_install_setup_plugdata\04_serial\serial_debug_print.md)
+[More info at its own page.](https://jonwaterschoot.github.io/plugdata-daisy-simple/01_install_setup_plugdata/04_serial/serial_debug_print.html)
 </details>
 
 ## what it looks like

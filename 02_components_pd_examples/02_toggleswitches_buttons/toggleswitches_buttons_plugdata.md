@@ -60,7 +60,11 @@ Steps to follow:
 
 ## what it looks like
 
-![toggle switches Synthux Simple Touch 3sounds](img/toggleswitchesSynthuxSimplTouch3sounds.mp4)
+<video width="320" height="auto" controls>
+  <source src="img/toggleswitchesSynthuxSimplTouch3sounds.mp4" type="video/mp4">
+</video>
+
+[Toggle switches Synthux Simple Touch 3 sounds short video demo](img/toggleswitchesSynthuxSimplTouch3sounds.mp4)
 
 For Plugdata or Daisy, the type of button or toggle doesn't matter. We just need to now what signal they send in which position.
 

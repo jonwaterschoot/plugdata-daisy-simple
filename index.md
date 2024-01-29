@@ -34,7 +34,7 @@ iframe {
 </style>
 <iframe src="https://www.youtube.com/embed/cOXGNsUJmgU?si=b6_w6sTPkyfVucrS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-More info about my submission the  That link also contains the initial documentation I wrote.
+[The Notion link to my submission](https://jonwtr.notion.site/Plugdata-and-daisy-seed-mpr121-touch-sensor-41be6a24dc0b4dc4bdd2fffbe4763dee) also contains the initial documentation I wrote that led to this whole website.
 
 ## From markdown to Github Pages
 
@@ -70,7 +70,7 @@ More 'advanced' parts:
 
 Feel free to contact me @jonwtr on the Discord servers of Synthux, Plugdata or Daisy
 
-Find my contact info via the my website, [www.jonwtr.be](https://www.jonwtr.be) the one I was supposed to set up instead of this one ...
+Find my other contact info via my website, [www.jonwtr.be](https://www.jonwtr.be), the website I was supposed to set up instead of this one ...
 
  
 

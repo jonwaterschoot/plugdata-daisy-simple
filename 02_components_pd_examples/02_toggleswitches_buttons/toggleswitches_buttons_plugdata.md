@@ -5,6 +5,16 @@ nav_order: 11
 parent: Components Plugdata examples
 ---
 
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 # Toggle switches and buttons
 
 Template structure for parts:

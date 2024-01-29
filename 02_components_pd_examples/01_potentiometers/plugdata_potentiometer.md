@@ -5,7 +5,19 @@ nav_order: 10
 parent: Components Plugdata examples
 ---
 
-# Potentiometer Plugdata example
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+{: .highlight}
+> This is how far I've gotten in the content of this site, so what follows is a draft.
+
+# Potentiometers - knobs and faders
 
 A potentiometer is a three-terminal resistor with a sliding or rotating contact that forms an adjustable voltage divider. If only two terminals are used, one end and the wiper, it acts as a variable resistor or rheostat.
 
@@ -33,7 +45,25 @@ So most commonly these would be the attributes you're looking for in a potentiom
 For faders:
 - slide potentiometer, linear, 10k resistance
 
+## Function - what can it do
 
+
+## What it looks like
+
+
+## Pins
+
+
+## Components json 
+
+
+## PD example(s)
+
+
+## links / references / sources
+
+
+***
 
 
 

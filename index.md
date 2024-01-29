@@ -25,15 +25,22 @@ As I got praise for the project and the documentation I made, I felt even more m
 This was my submission:
 [Soundscpr_alpha:](https://jonwtr.notion.site/Plugdata-and-daisy-seed-mpr121-touch-sensor-41be6a24dc0b4dc4bdd2fffbe4763dee) stereo audio input - drone synth - stereo delay - fx patch, made in Plugdata.
 
-<iframe max-width="100%" width="800" height="auto" src="https://www.youtube.com/embed/cOXGNsUJmgU?si=b6_w6sTPkyfVucrS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<style>
+iframe {
+  aspect-ratio: 16/9;
+  width: 100%;
+  max-width: 800px;
+}
+</style>
+<iframe src="https://www.youtube.com/embed/cOXGNsUJmgU?si=b6_w6sTPkyfVucrS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 More info about my submission the  That link also contains the initial documentation I wrote.
 
 ## From markdown to Github Pages
 
-It's built with markdown and gets published to a Github Pages site via the tool just-the-docs.
+It's built with markdown and gets published to a Github Pages website via the tool just-the-docs.
 
-This also has been a learning process, but has brought me some new knowledge on the Github workflow.
+This also has been a learning process, but has brought me some new knowledge on the Github workflow with vscode.
 
 The goal is to give a starters guide for noobs wanting to learn how to connect and setup your own hardware with the software Plugdata.
 
@@ -46,7 +53,7 @@ Setting up Plugdata
 * Installation
 * Plugdata to Daisy
 
-* Basic insight in the handling of signal flow, memory and cpu
+* Basic insight in the handling of signal flow, memory and cpu (TODO)
 
 Library of examples showing the usage of basis components:
 * potentiometer and faders

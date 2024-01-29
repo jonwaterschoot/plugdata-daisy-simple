@@ -7,15 +7,11 @@ has_children: true
 
 # Plugdata components examples
 
-This folder contains the examples. There are 6 parts, however some parts are more complex so the info won't be as complete.
+This folder contains the examples. Folders have been set up for all the planned parts, yet are incomplete. 
+Some parts are more complex so the info won't be as easy to illustrate for me.
 
-1. Potentiometers
-2. Toggle switches and buttons
-3. LED's
-4. Sensors (complex)
-5. midi (usb or via pins)
-6. CV control voltage (To do)
-7. Screens (To do)
+![Synthux Simple board with some components](BOM_-_Simple_-_Synthux_Academy.jpg)
+<sub>Picture from the Synthux website</sub>
 
 {: .highlight }
-> 💡 To do - link README for Github
+> 💡 To do - link README for Github in this folder

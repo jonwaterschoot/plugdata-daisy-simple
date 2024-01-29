@@ -25,7 +25,7 @@ As I got praise for the project and the documentation I made, I felt even more m
 This was my submission:
 [Soundscpr_alpha:](https://jonwtr.notion.site/Plugdata-and-daisy-seed-mpr121-touch-sensor-41be6a24dc0b4dc4bdd2fffbe4763dee) stereo audio input - drone synth - stereo delay - fx patch, made in Plugdata.
 
-<iframe width="1vw" height="auto" src="https://www.youtube.com/embed/cOXGNsUJmgU?si=b6_w6sTPkyfVucrS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe max-width="100%" width="800" height="auto" src="https://www.youtube.com/embed/cOXGNsUJmgU?si=b6_w6sTPkyfVucrS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 More info about my submission the  That link also contains the initial documentation I wrote.
 

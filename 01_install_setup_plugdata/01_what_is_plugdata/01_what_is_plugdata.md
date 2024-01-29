@@ -77,7 +77,7 @@ Maybe you’ve even used synths or kits in a eurorack system that use the Daisy 
 
 Or maybe you’ve seen the virtual eurorack systems like VCV rack, there's also others like Cherry Audio Voltage Modular and more ...
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NPErDUlwSlg?si=vqqYQokqqDcMECXk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe max-width="100%" width="800" height="auto" src="https://www.youtube.com/embed/NPErDUlwSlg?si=vqqYQokqqDcMECXk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## The modular approach in other software
 

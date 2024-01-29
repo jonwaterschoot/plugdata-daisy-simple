@@ -33,7 +33,7 @@ There are some caveats, things to consider. Daisy isn't your computer, a patch m
 > 💡 Not all existing patches work as is; they get converted; Many of the fancy visual stuff is useless for Daisy, many patches rely on things that are not supported, and Daisy also has limited CPU power compared to a computer.
 
 ## Video by Wasted Audio - maintainer of the Heavy project.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XKohpWGTKsQ?si=dMKeRCWfmMe69XDL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe max-width="100%" width="800" height="auto" src="https://www.youtube.com/embed/XKohpWGTKsQ?si=dMKeRCWfmMe69XDL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Heavy Compiler Collection (hvcc) and Plugdata
 

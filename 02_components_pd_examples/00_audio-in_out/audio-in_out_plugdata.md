@@ -5,6 +5,15 @@ nav_order: 9
 parent: Components Plugdata examples
 ---
 
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 # Name: Audio input / audio output
 
 First things first: getting sound in or out of daisy. These are the easiest parts and require little setup.

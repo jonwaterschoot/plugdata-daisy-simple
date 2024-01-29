@@ -100,9 +100,9 @@ Here's a basic file with a few components setup.
 
 ***
 
-This file has some in info at the top about our board.
+This file has some info at the top about our board.
 
-E.g. the type of the connected board is a Seed, as in Daisy Seed:
+E.g. the type of the connected board is a `seed`, as in Daisy Seed:
 
 ```json
    "som": "seed"
@@ -118,7 +118,7 @@ When using other types of things connected to the board, they get a separate sec
    }
 ```
 
-And there's a list with the components and their pin types.
+And then follows a list with the components and their pin types in the section `"components": {`
 
 e.g. the analog potentiometers like knobs and faders:
 ```json

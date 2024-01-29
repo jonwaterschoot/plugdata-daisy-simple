@@ -12,12 +12,10 @@ parent: Components Plugdata examples
 
 This could be considered an advanced part compared to connecting a regular potentiometer knob. 
 
-{ .highlight}
+{: .highlight}
 > The Synthux simple boards main multi connectors cannot fit an encoder. You could use the free disconnected grid, or mount it elsewhere and connect the wires to the pcb that way.
 
-An encoder typically has a VCC and GND plus 3 more pins.
-
-There are also encoders with only 3 pins.
+An encoder typically has a VCC and GND plus 3 more pins. However, there are also encoders with only 3 pins.
 
 Encoders are not like an analog potentiometer that has a linear set of values from 0 to 1.
 

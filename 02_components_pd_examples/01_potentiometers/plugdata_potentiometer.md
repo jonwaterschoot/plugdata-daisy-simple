@@ -47,6 +47,9 @@ For faders:
 
 ## Function - what can it do
 
+Potentiometers, or knobs and faders are a way to change a values from one end to another.
+While the potentiometer itself is read by the hardware in steps of 0 to 
+
 
 ## What it looks like
 

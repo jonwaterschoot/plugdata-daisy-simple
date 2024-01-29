@@ -62,6 +62,9 @@ While the potentiometer itself is read by the hardware in steps of 0 to
 
 ## PD example(s)
 
+![potentiometer 2knobs pitch volume](img/potentiometer_2knobs_pitch_volume.jpg)
+
+[potentiometer_2knobs_pitch_volume.pd](potentiometer_2knobs_pitch_volume.pd)
 
 ## links / references / sources
 

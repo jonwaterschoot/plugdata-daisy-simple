@@ -128,7 +128,7 @@ In plugdata we receive the values via a block with this text: `r knob1 @hv_param
 In this example we connect knob1 to the frequency of an oscillator, and a fader controls the volume.
 
 
-![potentiometer fader analogcontrol Plugdata example](/02_components_pd_examples/01_potentiometers/img/potentiometer_fader_analogcontrol.png)
+![potentiometer fader analogcontrol Plugdata example](img/potentiometer_fader_analogcontrol.png)
 
 - `r knob1 @hv_param` and `r faderleft @hv_param` receive knob and fader values (0 - 1) from the analog pins you setup in the custom json
 
@@ -151,7 +151,7 @@ Making this time too long might make it feel lagging, but in some cases could be
 Use `line~`, with the `~` to keep your patch as much as possible in this continuous signal domain. 
 
 ### Download this patch:
-[potentiometer_fader_analogcontrol.pd](/02_components_pd_examples/01_potentiometers/potentiometer_fader_analogcontrol.pd)
+[potentiometer_fader_analogcontrol.pd](potentiometer_fader_analogcontrol.pd)
 
 Or copy this text and paste it in a Plugdata patch (it should get "transformed" into what you see in the screenshot above):
 

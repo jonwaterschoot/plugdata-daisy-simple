@@ -1,174 +1,104 @@
-# just-the-docs-template
+This Github repository is best viewed on the published pages address.
 
-This is a *bare-minimum* template to create a [Jekyll] site that:
+[jonwaterschoot.github.io/plugdata-daisy-simple/](https://jonwaterschoot.github.io/plugdata-daisy-simple/)
 
-- uses the [Just the Docs] theme;
-- can be built and published on [GitHub Pages];
-- can be built and previewed locally, and published on other platforms.
+This is the content of the homepage:
 
-More specifically, the created site:
+# Get up and running with Plugdata and Daisy 
+**(Get up and running with Plugdata and Daisy on your Synthux Simple pcb's)**
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem;
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages.
+## For whom?
 
-To get started with creating a site, simply:
+You're interested in programming your own synth, but;
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+If you are new or intimidated by programming and find writing your own C/C++ or Arduino code a cumbersome idea to learn, this might be your answer.
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](#hosting-your-docs-from-an-existing-project-repo).
+This site has info on the basic things you'll need to start building and programming a Synth and/or audio FX device.
 
-After completing the creation of your new site on GitHub, update it as needed:
+## Skills needed
 
-## Replace the content of the template pages
+{: .new}
+> TLDR; 
+>
+>Personally I think anyone with a basic knowledge on working with a computer, installing software etc. Would be able to do this, with enough commitment of course.
 
-Update the following files to your own content:
+There are so many tutorials and courses to find on anything these days, so depending on your needs you might first want to learn more about Synthesis, or about how microcontrollers work, ...
 
-- `index.md` (your new home page)
-- `README.md` (information for those who access your site repo on GitHub)
+My recent journey from Plugdata to Daisy came about through learning Synthux's Simple PCB's and info they provide.
 
-## Changing the version of the theme and/or Jekyll
+This is why I'm using the Synthux Simple boards in the examples on this site, but most will apply to anyone using Daisy Seed and Plugdata.
 
-Simply edit the relevant line(s) in the `Gemfile`.
+To sketch my basic skill-set:
 
-## Adding a plugin
+I personally started tinkering with some basic Arduino's for art projects many years ago. I've dabbled in html and css, and some other basic web stuff like js etc ... And I used an early version of Fruity Loops in the 90's. I've been playing with graphical software and Blender (3D) for +20 years.
 
-The Just the Docs theme automatically includes the [`jekyll-seo-tag`] plugin.
+My renewed interest in music and synthesis is much younger and about the only upside to becoming disabled with chronic pain and being chained to a couch.
 
-To add an extra plugin, you need to add it in the `Gemfile` *and* in `_config.yml`. For example, to add [`jekyll-default-layout`]:
+So, to conclude, I can use a computer pretty well, but, I'm still not very skilled at programming purely with a text based approach.
 
-- Add the following to your site's `Gemfile`:
+The visual programming of Plugdata is the ideal method for me, it's still programming, yet I find it more approachable to see the structure as a network of connected parts.
 
-  ```ruby
-  gem "jekyll-default-layout"
-  ```
 
-- And add the following to your site's `_config.yml`:
+## The site is built around three main parts
 
-  ```yaml
-  plugins:
-    - jekyll-default-layout
-  ```
+ - What is Plugdata
+ - Installation and setup
+ - Examples for basic components with Plugdata
 
-Note: If you are using a Jekyll version less than 3.5.0, use the `gems` key instead of `plugins`.
+{: .new}
+> Use the menu / Table of content to quickly glance at this site's content. Left on larger screens / at the top for smaller screens
+>
+> On top of every page there should be a TOC for each particular page.
 
-## Publishing your site on GitHub Pages
+## This is a work in progress
 
-1.  If your created site is `YOUR-USERNAME/YOUR-SITE-NAME`, update `_config.yml` to:
+{: .highlight}
+> This website is not completed, at all ...
 
-    ```yaml
-    title: YOUR TITLE
-    description: YOUR DESCRIPTION
-    theme: just-the-docs
+The main goal was to provide some working examples of Plugdata code that works with components like knobs and LEDs connected to the Daisy seed.
 
-    url: https://YOUR-USERNAME.github.io/YOUR-SITE-NAME
+Ironically, thus far only the pages on setting up are quasi ready. 🙈
 
-    aux_links: # remove if you don't want this link to appear on your pages
-      Template Repository: https://github.com/YOUR-USERNAME/YOUR-SITE-NAME
-    ```
+## Why I made this
 
-2.  Push your updated `_config.yml` to your site on GitHub.
+The origin of this website comes from joining [Synthux Academy](https://www.synthux.academy/) and learning about the option to use Plugdata to program Daisy seed.
 
-3.  In your newly created repo on GitHub:
-    - go to the `Settings` tab -> `Pages` -> `Build and deployment`, then select `Source`: `GitHub Actions`.
-    - if there were any failed Actions, go to the `Actions` tab and click on `Re-run jobs`.
+As I was taking notes when I was trying to get up and running in Plugdata with a touch sensor + the Daisy seed, I started thinking about a repository with some basic examples for starters such as myself.
 
-## Building and previewing your site locally
+Right at the time as I was doing this, Synthux brought out the Simple Touch PCB, using the sensor I already had. When they then also launched the Synthmas challenge, I just had to join.
 
-Assuming [Jekyll] and [Bundler] are installed on your computer:
+As I got praise for the project and the documentation I made, I felt even more motivated to start this site.
 
-1.  Change your working directory to the root directory of your site.
+This was my submission:
+[Soundscpr_alpha:](https://jonwtr.notion.site/Plugdata-and-daisy-seed-mpr121-touch-sensor-41be6a24dc0b4dc4bdd2fffbe4763dee) stereo audio input - drone synth - stereo delay - fx patch, made in Plugdata.
 
-2.  Run `bundle install`.
+<style>
+iframe {
+  aspect-ratio: 16/9;
+  width: 100%;
+  max-width: 800px;
+}
+</style>
+<iframe src="https://www.youtube.com/embed/cOXGNsUJmgU?si=b6_w6sTPkyfVucrS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-3.  Run `bundle exec jekyll serve` to build your site and preview it at `localhost:4000`.
+[The Notion link to my submission](https://jonwtr.notion.site/Plugdata-and-daisy-seed-mpr121-touch-sensor-41be6a24dc0b4dc4bdd2fffbe4763dee) also contains the initial documentation I wrote that led to this whole website.
 
-    The built site is stored in the directory `_site`.
+## From markdown to Github Pages
 
-## Publishing your built site on a different platform
+This site is built with markdown and gets published to a Github Pages website via the tool just-the-docs.
 
-Just upload all the files in the directory `_site`.
+This has also been a learning process for me, but has brought me some new knowledge on the Github workflow with vscode.
 
-## Customization
+The goal is to give a starters guide for noobs wanting to learn how to connect and setup your own hardware with the software Plugdata.
 
-You're free to customize sites that you create with this template, however you like!
+The Plugdata approach has the capacity to be a bit more user friendly than going for the full-on coding method with e.g. Arduino or C++. But also has the potential to be your goto for larger projects.
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+## Suggestions / Questions
 
-## Hosting your docs from an existing project repo
+This website is a one-man-who-is-pretty-much-a-noob, so I'll gladly welcome any criticism, remarks, etc. 
 
-You might want to maintain your docs in an existing project repo. Instead of creating a new repo using the [just-the-docs template](https://github.com/just-the-docs/just-the-docs-template), you can copy the template files into your existing repo and configure the template's Github Actions workflow to build from a `docs` directory. You can clone the template to your local machine or download the `.zip` file to access the files.
+Maybe some better setup, other documentation template, ... 
 
-### Copy the template files
+Feel free to contact me @jonwtr on the Discord servers of Synthux, Plugdata or Daisy
 
-1.  Create a `.github/workflows` directory at your project root if your repo doesn't already have one. Copy the `pages.yml` file into this directory. GitHub Actions searches this directory for workflow files.
-
-2.  Create a `docs` directory at your project root and copy all remaining template files into this directory.
-
-### Modify the GitHub Actions workflow
-
-The GitHub Actions workflow that builds and deploys your site to Github Pages is defined by the `pages.yml` file. You'll need to edit this file to that so that your build and deploy steps look to your `docs` directory, rather than the project root.
-
-1.  Set the default `working-directory` param for the build job.
-
-    ```yaml
-    build:
-      runs-on: ubuntu-latest
-      defaults:
-        run:
-          working-directory: docs
-    ```
-
-2.  Set the `working-directory` param for the Setup Ruby step.
-
-    ```yaml
-    - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1'
-          bundler-cache: true
-          cache-version: 0
-          working-directory: '${{ github.workspace }}/docs'
-    ```
-
-3.  Set the path param for the Upload artifact step:
-
-    ```yaml
-    - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: "docs/_site/"
-    ```
-
-4.  Modify the trigger so that only changes within the `docs` directory start the workflow. Otherwise, every change to your project (even those that don't affect the docs) would trigger a new site build and deploy.
-
-    ```yaml
-    on:
-      push:
-        branches:
-          - "main"
-        paths:
-          - "docs/**"
-    ```
-
-## Licensing and Attribution
-
-This repository is licensed under the [MIT License]. You are generally free to reuse or extend upon this code as you see fit; just include the original copy of the license (which is preserved when you "make a template"). While it's not necessary, we'd love to hear from you if you do use this template, and how we can improve it for future use!
-
-The deployment GitHub Actions workflow is heavily based on GitHub's mixed-party [starter workflows]. A copy of their MIT License is available in [actions/starter-workflows].
-
-----
-
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
-
-[Jekyll]: https://jekyllrb.com
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[Bundler]: https://bundler.io
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
-[`jekyll-default-layout`]: https://github.com/benbalter/jekyll-default-layout
-[`jekyll-seo-tag`]: https://jekyll.github.io/jekyll-seo-tag
-[MIT License]: https://en.wikipedia.org/wiki/MIT_License
-[starter workflows]: https://github.com/actions/starter-workflows/blob/main/pages/jekyll.yml
-[actions/starter-workflows]: https://github.com/actions/starter-workflows/blob/main/LICENSE
+Find my other contact info via my website, [www.jonwtr.be](https://www.jonwtr.be), the website I was supposed to set up instead of this one ...

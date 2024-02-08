@@ -49,10 +49,10 @@ Looking at your components might give you some clue, the stereo mostly has a cle
 
 ## Pins 16 - 19
 
-There are 2 stereo input pins: 16 and 17;
-and 2 stereo output pins, 18 and 19.
+On the Daisy there are 2 stereo input pins: 16 and 17; and 2 stereo output pins, 18 and 19.
 
-Note the pin numbers here stand for the Pins on the Daisy board - if you need an oversight of pins you can [look at this spreadsheet](https://docs.google.com/spreadsheets/d/1xtg_s1tk8tm-6qNkBLFc6V1L_Mpmu-PCOvv7qEyr9mU/edit?usp=sharing).
+>{: .new}
+> Note the pin numbers here stand for the Pins on the Daisy board - if you need an oversight of pins you can [look at this spreadsheet](https://docs.google.com/spreadsheets/d/1xtg_s1tk8tm-6qNkBLFc6V1L_Mpmu-PCOvv7qEyr9mU/edit?usp=sharing).
 
 You'll connect these to audio jack(s). And then you'll also connect ground to your jacks.
 

@@ -143,7 +143,7 @@ Pin numbers can become confusing, therefor I've made this overview table.
 
 ![Pins Table overview](img\Pins-Table_overview_Daisy_plugdata.png)
 
-Follow this [link to the spreadsheet](https://docs.google.com/spreadsheets/d/1xtg_s1tk8tm-6qNkBLFc6V1L_Mpmu-PCOvv7qEyr9mU/edit?usp=sharing) showing the pin numbers used in on the Daisy board, Plugdata, Synthux, ...
+Follow this [link to the spreadsheet](https://docs.google.com/spreadsheets/d/1xtg_s1tk8tm-6qNkBLFc6V1L_Mpmu-PCOvv7qEyr9mU/edit?usp=sharing) showing the pin numbers used on/in the Daisy board, Plugdata, Synthux, ...
 
 When you're making your own board it can be a handy tool to make your own copy and list your own connections and custom names.
 

@@ -195,7 +195,7 @@ For example, the standard message a toggle switch, which is basically a type of 
 |Switch|_press|Returns a float representing the current state (1 = pressed, 0 = not pressed)|
 |Switch|_fall|Returns a bang on the signal's falling edge (i.e. when the switch is released).|
 
-{ .highlight}
+{: .highlight}
 > Components can send different types of messages by adding strings to their names in plugdata.
 > - See the full list on the [pd2dsy Github page](https://github.com/electro-smith/pd2dsy?tab=readme-ov-file#interacting-with-the-daisy-io)
 > - In the examples on this site we'll demonstrate some of these
@@ -224,14 +224,14 @@ See this excerpt of code that is used in [custom_json_example.json from pd2dsy o
       }
 ```
 
-{ .attention}
+{: .attention}
 > Note that for the encoder the `_rise` and `_press` have been added inside the json already, making them available in Plugdata by the alias.
 >
 > These details could help you make your patch more readable or clearly defined.
 
 ## Download / link / full example
 
-Though you'll probably end up tweaking or writing your own, there are a few pre-made versions of the custom json files you can find.
+Though you'll probably end up tweaking or writing your own, there are a few pre-made versions of the custom json files you can find. Two full examples are on the end of this page.
 
 ### pd2dsy
 
@@ -247,9 +247,7 @@ You won't need this, as its not a separate tool, but there are some examples for
 
 [json2daisy resources on Github](https://github.com/electro-smith/json2daisy/tree/main/src/json2daisy/resources) has all the Electrosmith configurations.
 
-### Plugdata boards resources
-
-
+### Simple.json (Synthux)
 
 Full json file 'Simple' that is included in Plugdata can be [downloaded from Github](https://github.com/plugdata-team/plugdata-heavy-toolchain/blob/main/resources/simple.json)
 
@@ -336,4 +334,132 @@ This is the file from plugdata's Github but I've added Toggle Switches on pins 6
         "knob": "knob1"
     }
 }
+```
+---
+
+### Synthux Simple Touch - jonwtr
+
+This is the version I'm using. Note that for this to work you have to edit the 'mother-file' because of a bug the pins are not setup correct. To change the main json definition file you can do this:
+
+#### **Edit a part of the toolchain json** components definition file
+
+To get a working mpr121 **edit a part of the toolchain json** components definition file / might get fixed
+
+- This is not ‘normal’ and is supposed to work without the edit;
+- this bug has been reported: **[Bug: mpr121 pin setup incorrect](https://github.com/electro-smith/json2daisy/issues/18)**
+
+- currently the file in question is causing an error referring to wrong pins
+    - mpr121 touch sensor is supported, however seems to give a pin error:
+    - `Error c2daisy: 'pin_scl’`
+- We need to edit the file that contains the mpr121 code and is located in the installed toolchain:
+    - edit code in the json file `component_defs.json`
+    - on my windows machine it’s here: `C:\Users\gebruiker\Documents\plugdata\Toolchain\usr\bin\Heavy\json2daisy\resources\component_defs.json`
+- Change the first line `“map_init”`:
+    - Note I’ve added a few extra lines to easily see where it’s located
+
+```json
+Original code:
+--------------
+"Mpr121": {
+		"map_init": "daisy::Mpr121I2CTransport::Config {name}_config;\n    {name}_config.periph = {periph};\n    {name}_config.speed = {speed};\n    {name}_config.scl = som.GetPin({pin_scl});\n    {name}_config.sda = som.GetPin({pin_sda});\n    {name}_config.dev_addr = {address};\n    daisy::Mpr121I2C::Config {name}_main_conf;\n    {name}_main_conf.transport_config = {name}_config;\n    {name}_main_conf.touch_threshold = {touch_threshold};\n    {name}_main_conf.release_threshold = {release_threshold};\n    {name}.Init({name}_main_conf);",
+		"typename": "daisy::Mpr121I2C",
+		"direction": "in",
+		"pin": "scl,sda",
+```
+
+delete the part referring to the pins in the “map_init” **line 558**, leave the line “pin” as is:
+
+delete: `{name}_config.scl = som.GetPin({pin_scl});\n    {name}_config.sda = som.GetPin({pin_sda});\n`    
+
+```json
+Altered code:
+-------------
+"Mpr121": {
+		"map_init": "daisy::Mpr121I2CTransport::Config {name}_config;\n    {name}_config.periph = {periph};\n    {name}_config.speed = {speed};\n     {name}_config.dev_addr = {address};\n    daisy::Mpr121I2C::Config {name}_main_conf;\n    {name}_main_conf.transport_config = {name}_config;\n    {name}_main_conf.touch_threshold = {touch_threshold};\n    {name}_main_conf.release_threshold = {release_threshold};\n    {name}.Init({name}_main_conf);",
+		"typename": "daisy::Mpr121I2C",
+		"direction": "in",
+		"pin": "scl,sda",
+```
+
+This part `mpr121_driver` will now load correctly.
+
+```json
+{
+   "name": "SimpleTouch",
+   "som": "seed",
+   "defines": {
+    "OOPSY_TARGET_HAS_MIDI_INPUT": 1
+   },
+   "audio": {
+     "channels": 2
+   },
+
+   "parents": {
+     "mpr121_driver": {
+       "component": "Mpr121"
+       }
+   },
+
+    "components": {
+       "faderleft": {
+           "component": "AnalogControl",
+           "pin": 21
+       },
+       "faderright": {
+           "component": "AnalogControl",
+           "pin": 22
+       },
+       "knob0": {
+           "component": "AnalogControl",
+           "pin": 15
+       },
+       "knob1": {
+           "component": "AnalogControl",
+           "pin": 16
+       },
+       "knob2": {
+           "component": "AnalogControl",
+           "pin": 17
+       },
+       "knob3": {
+           "component": "AnalogControl",
+           "pin": 18
+         },
+       "knob4": {
+           "component": "AnalogControl",
+           "pin": 19
+       },
+       "knob5": {
+           "component": "AnalogControl",
+           "pin": 20
+       },
+       "toggle1left": {
+           "component": "Switch",
+           "pin": 8
+       },
+       "toggle1right": {
+           "component": "Switch",
+           "pin": 9
+       },
+       "toggle2up": {
+           "component": "Switch",
+           "pin": 7
+       },
+       "toggle2down": {
+           "component": "Switch",
+           "pin": 6
+       },
+       "recled": {
+        "component": "Led",
+        "pin": 23
+       },
+       "noiseled": {
+            "component": "Led",
+            "pin": 24
+    }
+       
+  }
+
+}
+
 ```

@@ -22,9 +22,9 @@ This site has info on the basic things you'll need to start building and program
 >
 >Personally I think anyone with a basic knowledge on working with a computer, installing software etc. Would be able to do this, with enough commitment of course.
 
-There are so many tutorials and courses to find on anything these days, so depending on your needs you might first want to learn more about Synthesis, or about how microcontrollers work, ...
+There are so many tutorials and courses to find on anything these days, so depending on your needs you might first want to learn more about synthesis, or about how microcontrollers work, ...
 
-My recent journey from Plugdata to Daisy came about through learning Synthux's Simple PCB's and info they provide.
+My recent journey from Plugdata to Daisy came about through learning Synthux's Simple PCB's and the info they provide.
 
 This is why I'm using the Synthux Simple boards in the examples on this site, but most will apply to anyone using Daisy Seed and Plugdata.
 

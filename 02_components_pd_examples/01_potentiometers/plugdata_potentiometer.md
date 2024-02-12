@@ -77,9 +77,11 @@ In Plugdata you will be using 0 to 1 as the float values to control things. When
 
 These are analog components, by changing the position of the knob or fader you change the amount of voltage they allow to flow. 
 
-Hence, we need the analog pins on our boards. these are labeled as A0 to A11, these pins could be used for other things as well, so in the custom json we'll have to instruct to use them as `AnalogControl`
+A potentiometer is a variable resistor with three pins. Two are connected to the ends of a fixed resistor. The middle pin is moving across this.
 
-Connect the outer pins to power and ground, connect the middle pin to an Analog pin.
+Hence, we need the analog pins on our boards. These are labeled as A0 to A11, these pins could be used for other things as well, so in the custom json we'll have to instruct to use them as `AnalogControl`
+
+Connect the outer pins to voltage and ground, connect the middle pin to an Analog pin.
 
 Follow this [link to the spreadsheet](https://docs.google.com/spreadsheets/d/1xtg_s1tk8tm-6qNkBLFc6V1L_Mpmu-PCOvv7qEyr9mU/edit?usp=sharing) showing the pin numbers used on/in the Daisy board, Plugdata, Synthux, ...
 

@@ -58,7 +58,7 @@ Steps to follow:
 [More info at its own page.](https://jonwaterschoot.github.io/plugdata-daisy-simple/01_install_setup_plugdata/04_serial/serial_debug_print.html)
 </details>
 
-## what it looks like
+## What it looks like
 
 <video width="320" height="auto" controls>
   <source src="img/toggleswitchesSynthuxSimplTouch3sounds.mp4" type="video/mp4">
@@ -84,18 +84,81 @@ Some toggles will just be a way of breaking or connecting one wire.
 ## Pins
 
 Both the ON-ON and the ON-OFF-ON Toggle switches have 3 pins.
+
 - Both the outer pins should connect to a digital pin on the Daisy.
 - The middle pin connects to ground
 
-Don't forget there are two GND points on the Daisy that you should connect outside the board. In Synthux Simple Touch this is done in  the PCB itself when installing it. On other Simple boards this will also be included in the instructions. 
+Don't forget there are two GND points on the Daisy that you should connect outside the board. In Synthux Simple Touch, and the Simple Fix, this is done on the PCB itself by soldering the bridges. On the larger Simple board this is done via a short wire on the left side of the board. If in doubt do check in the manual/guide. 
+
+For the available digital pins do check which ones are still free. Some pins can have multiple ways to use them, that's why they are defined accordingly in the json file.
+
+[Link to table overview Daisy Seed pins and Synthux Simple boards.](https://docs.google.com/spreadsheets/d/1xtg_s1tk8tm-6qNkBLFc6V1L_Mpmu-PCOvv7qEyr9mU/edit?usp=sharing)
+
+In Plugdata you can refer to these pins with the added `_press`, `_fall` and `_seconds` (see examples below)
+
+|Switch|---|Returns a bang on the signal's rising edge (i.e. when the switch is actuated).|
+|:----|:----|:----|
+|Switch|_press|Returns a float representing the current state (1 = pressed, 0 = not pressed)|
+|Switch|_fall|Returns a bang on the signal's falling edge (i.e. when the switch is released).|
+|Switch|_seconds|Returns a float representing the number of seconds the switch has been held down.|
+
+
 
 ## Components json
 
+We refer to the buttons/toggle switches as `Switch` and define the digital pins we connected to. 
+
+This example has 1 potentiometer and 4 pins set as switches.
+
+
+
+```json
+{
+    "name": "Simple",
+    "som": "seed",
+    "defines": {
+        "OOPSY_TARGET_HAS_MIDI_INPUT": 1
+    },
+    "audio": {
+        "channels": 2
+    },
+    "components": {
+        "knob1": {
+            "component": "AnalogControl",
+            "pin": 15
+        },
+        "toggle1left": {
+           "component": "Switch",
+           "pin": 8
+       },
+       "toggle1right": {
+           "component": "Switch",
+           "pin": 9
+       },
+       "toggle2up": {
+           "component": "Switch",
+           "pin": 7
+       },
+       "toggle2down": {
+           "component": "Switch",
+           "pin": 6
+       }
+    }
+}
+```
 
 
 ## PD example(s)
 
 ### ON OFF ON - 3 options examples
+
+Even though our toggles has only two connected pins, we can emulate the third by using the zero position. We trigger an action by looking for when we de-activate the toggle. So by defining "position 1 and position 2 are not active anymore" we activate option 3.
+
+Add `_fall` to the custom switch pin name, e.g. `toggle1left` + `_fall` you write `r toggle1left_fall @hv_param` in a Plugdata object.
+
+We can also do this for the `_press` action. See the above table to know which message they send. Or use a print object to verify. ([about serial printing](/01_install_setup_plugdata/04_serial/serial_debug_print.md))
+
+Below I've got two examples that work, though they might need optimizing.
 
 #### Using the object `[spigot]`
 
@@ -113,13 +176,3 @@ Download this pd example: [on_off_on_switch-3options_signal.pd](on_off_on_switch
 ## links / references / sources
 
 
-***
-
-Template structure for parts:
-  1. Name
-  2. function - what can it do
-  3. what it looks like
-  4. Pins
-  5. Components json 
-  6. PD example(s)
-  7. links / references / sources

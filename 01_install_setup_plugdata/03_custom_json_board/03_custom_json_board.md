@@ -24,20 +24,21 @@ There already exists a comprehensive [guide for pd2dsy](https://forum.electro-sm
 And although we're compiling from Plugdata, the workflow is quasi the same. Even better, everything is just a bit easier as we do the compile process from within Plugdata. We do however need to make a separate file that we select in the compile window: **the custom json**. And that has to follow the same principles.
 
 {: .new}
-> As a recap:
-> - connect components to the Daisy board
+> As a recap, the Plugdata to Daisy workflow:
+> - connect/solder components to the correct Daisy board pins
 > - setup a json file that tells the compiler which pins are used
 > - make a patch in Plugdata with your new custom setup
 > - uploading your code to the board is done by compiling: 
->     - Heavy Compiler Collection (hvcc) helps converting your code to C++
+>   - Heavy Compiler Collection (hvcc) helps converting your code to C++
 
 
 {: .attention }
-> The Heavy compiler will output an error when there are spaces in the path or in the file names. This also applies to any subpatches you might use, or if you are exporting you're compiled patch to disk. 
+> The Heavy compiler will output an error when there are spaces in the path or in the file names. This also applies to any subpatches you might use, or if you are exporting/saving your compiled patch to disk. 
 >
 > {: .warning }
-> - Do not use spaces in file names or in the paths
-> - Do not use capital letters in your custom components names
+> ***Do not*** use spaces in file names or in the paths
+> ***Do not***_ use capital letters in your custom components names
+
 
 ## Custom json for a custom Daisy setup
 

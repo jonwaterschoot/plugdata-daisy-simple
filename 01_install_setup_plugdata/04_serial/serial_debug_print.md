@@ -14,6 +14,45 @@ parent: Installation and setting up Plugdata with Daisy
 {:toc}
 </details>
 
+# About debugging and error solving
+
+## RTFM
+
+We all like to jump in head first, and then when we fall we look up our mistakes.
+There is a lot of useful info at the HVCC docs that goes over some of the most important things to consider when debugging.
+
+Read this when getting started, look at the Tips and Tricks section, and the Known Limitations.
+
+## No spaces in your files and paths, no CAPS in custom json names.
+
+The Heavy compiler will output an error when there are spaces in the path or in the file names. This also applies to any subpatches you might use, or if you are exporting/saving your compiled patch to disk. 
+>
+> {: .warning }
+> ***Do not*** use spaces in file names or in the paths
+> ***Do not***_ use capital letters in your custom components names
+
+## Daisy has its own ~~blue screen~~ annoying beep of death
+
+It is not uncommon to hear a loud beep when a patch crashes.
+
+Sometimes these crashes happen:
+- Patch crashing silently, you might not be sure if didn't upload, didn't start, etc ...
+- Crash is immediate and starts the loud beep
+- Patch will run for a while, even untouched, then crash seemingly random
+- Doing a specific interaction like turning a knob, or turning it very fast
+
+{: .warning}
+> **Debugging**
+>
+> - First step is always to check if you have as much as possible in the ~sig / signal domain.
+>
+> - break your patch down into smaller pieces to find what is causing the error.
+>
+> - Use printing (to serial) if your in doubt of what values you're outputting.
+>
+> - Read the info at HVCC docs for more general info, tips and tricks and known limitations, (un)supported items, etc.: [HVCC getting started](https://wasted-audio.github.io/hvcc/docs/02.getting_started.html)
+
+
 # Printing to serial instructions
 
 To be able to read messages sent by our components we can send it to print. If you've done this with an Arduino you probably know the function `Serial.print()`.

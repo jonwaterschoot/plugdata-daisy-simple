@@ -13,6 +13,12 @@ has_children: true
   - installing the toolchain and using the compiler window
 - Creating a custom json
   - Describing your board and which components are connected to which pins
+- Serial printing
+  - Using `print` while patching and as a tool to do serial debugging
+- Memory usage
+  - How much memory can we use and how?
+  - custom linkers and links with more info 
+
 
 {: .highlight }
 > 💡 TO DO: Link README for Github

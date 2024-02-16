@@ -19,11 +19,12 @@ parent: Installation and setting up Plugdata with Daisy
 The Daisy has a few options for using different types of memory when uploading your compiled patch. You'll come across RAM, SRAM, QSPI, ...
 Maybe you'll need some space to to save a sample. It's possible, yet pretty complex if you're new.
 
-{. new}
+{: .new}
 > When running into memory issues like in the compile window you'll see how much % your patch is using of each memory region. (It's not all the same and not as easy as just using the biggest region.)
 >
 > Sometimes your patch will compile but crash. e.g. with the annoying whining high tone, we all hate this and there can be many reasons.
->
+
+{: .warning}
 > **Debugging**
 >
 > - First step is always to check if you have as much as possible in the ~sig / signal domain.
@@ -32,6 +33,9 @@ Maybe you'll need some space to to save a sample. It's possible, yet pretty comp
 >
 > - Use printing (to serial) if your in doubt of what values you're outputting. [see this page](01_install_setup_plugdata\04_serial\serial_debug_print.md)
 >
+> - Read the info at HVCC docs for more general info, tips and tricks and known limitations, (un)supported items, etc.: [HVCC getting started](https://wasted-audio.github.io/hvcc/docs/02.getting_started.html)
+
+
 
 In the compile window in Plugdata you'll see an option under **Patch size** to pick different modes, as of writing this document, there are the Small, Big and Huge options.
 
@@ -46,7 +50,7 @@ In the compile window in Plugdata you'll see an option under **Patch size** to p
 
 ## Which one should you pick?
 
-The debate on the naming and approach to this is still being debated/thought about, so might/will change.
+The approach and the the naming to this is still being debated/thought about by the developers, so might/will change.
 
 Again, while complex and there not being a single answer, we'll follow this approach:
 
@@ -72,7 +76,11 @@ To be able to use this larger memory I've been using the custom linker [sram_lin
 
 [pd2dsy has the different linkers](https://github.com/electro-smith/pd2dsy/tree/master/util)
 
+General info, tips and tricks and known limitations, (un)supported items etc over at the HVCC dos: [HVCC getting started](https://wasted-audio.github.io/hvcc/docs/02.getting_started.html)
+
 ## How to use them?
+
+Remember: no spaces in the file name, __no spaces__ in the path of the folders containing any linked files.
 
 - Save the `.lds` file on your computer;
 

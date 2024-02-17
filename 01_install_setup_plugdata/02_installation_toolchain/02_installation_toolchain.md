@@ -18,7 +18,7 @@ parent: Installation and setting up Plugdata with Daisy
 
 ![Compiler Screenshot](img\Plugdata_compiler_scrnsht.jpg)
 
-To get up and running you need to understand the basic workflow for getting your Patches from Plugdata compiled onto the Daisy seed microcontroler.
+To get up and running you need to understand the basic workflow for getting your Patches from Plugdata compiled onto the Daisy seed microcontroller.
 
 {: .new }
 > In short the workflow to go from patch to Daisy:
@@ -31,6 +31,7 @@ There are some caveats, things to consider. Daisy isn't your computer, a patch m
 
 {: .highlight }
 > 💡 Not all existing patches work as is; they get converted; Many of the fancy visual stuff is useless for Daisy, many patches rely on things that are not supported, and Daisy also has limited CPU power compared to a computer.
+> This guide has a lot of links, different tips, things you need to consider, ... hence I suggest you start reading here and watch the video below.
 
 ## Video by Wasted Audio - maintainer of the Heavy project.
 

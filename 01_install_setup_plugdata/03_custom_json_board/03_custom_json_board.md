@@ -36,8 +36,7 @@ And although we're compiling from Plugdata, the workflow is quasi the same. Even
 > The Heavy compiler will output an error when there are spaces in the path or in the file names. This also applies to any subpatches you might use, or if you are exporting/saving your compiled patch to disk. 
 >
 > {: .warning }
-> ***Do not*** use spaces in file names or in the paths
-> ***Do not***_ use capital letters in your custom components names
+> ***Do not*** use spaces in file names or in the paths, ***do not*** use capital letters in your custom components names
 
 
 ## Custom json for a custom Daisy setup

@@ -37,12 +37,14 @@ There are different types of potentiometers, but in this context we will focus o
 > These are potentiometers that you can slide up and down. They also have a fixed range. They look like sliders or levers that you can move along a track.
 
 > {: .highlight}
-> Technically they are the same. 
+> Technically they are the same.
 
-So most commonly these would be the attributes you're looking for in a potentiometer: 
+So most commonly these would be the attributes you're looking for in a potentiometer:
+
 - single turn, linear , 10k resistance.
 
 For faders:
+
 - slide potentiometer, linear, 10k resistance
 
 ## Function - what can it do
@@ -57,7 +59,7 @@ While the potentiometer itself is read by the hardware in steps of 0 to 1023, it
 |Inputs|---|---|
 |Voltage Input|---|Returns a floating point representation of the voltage at its input. The typical range is 0-5 V, which is represented as 0-1|
 
-In Plugdata you will be using 0 to 1 as the float values to control things. When needed you do simple maths, e.g. if you would need a value range of 0 to 127, you'd add a block `* 100`. 
+In Plugdata you will be using 0 to 1 as the float values to control things. When needed you do simple maths, e.g. if you would need a value range of 0 to 127, you'd add a block `[* 127]`.
 
 (Comparable to the mapping function with Arduino's.)
 
@@ -75,7 +77,7 @@ In Plugdata you will be using 0 to 1 as the float values to control things. When
 
 ## Pins
 
-These are analog components, by changing the position of the knob or fader you change the amount of voltage they allow to flow. 
+These are analog components, by changing the position of the knob or fader you change the amount of voltage they allow to flow.
 
 A potentiometer is a variable resistor with three pins. Two are connected to the ends of a fixed resistor. The middle pin is moving across this.
 
@@ -144,20 +146,24 @@ In this example we connect knob1 to the frequency of an oscillator, and a fader 
 
 ### Smoothing and the signal~ domain
 
-#### Smooth:
+#### Smooth
+
 At default setting you "read" the knob every 1ms, this could potentially introduce glitchy behavior if you send numbers every cycle, that's why we want to smooth out any small fluctuations from turning your crappy dusty knob.
 
 Making this time too long might make it feel lagging, but in some cases could be preferable to get even smoother / slower / gradual changes.
 
 #### ~Signal
+
 Use `line~`, with the `~` to keep your patch as much as possible in this continuous signal domain. 
 
 ### Download this patch:
+
 [potentiometer_fader_analogcontrol.pd](potentiometer_fader_analogcontrol.pd)
 
 Or copy this text and paste it in a Plugdata patch (it should get "transformed" into what you see in the screenshot above):
 
-```
+```pd
+
 #X obj 282 119 r knob1 @hv_param;
 #X msg 282 247 \$1 20;
 #X obj 282 299 line~;
@@ -192,12 +198,13 @@ Or copy this text and paste it in a Plugdata patch (it should get "transformed" 
 #X connect 14 0 7 0;
 
 ```
+
 ## links / references / sources
 
 TODO:
+
 - link to parts on e.g. Thonk
+
 - link to synthux docs/vids
 
 ***
-
-

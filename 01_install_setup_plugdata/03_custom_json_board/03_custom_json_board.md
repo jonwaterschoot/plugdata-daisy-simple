@@ -17,7 +17,7 @@ parent: Installation and setting up Plugdata with Daisy
 # Setting up a custom json file to describe your daisy pin setup
 
 ![Synthux Simple](img\Synthux_Simple_Daisy.jpg)
-<sub>So you've connected some potentiometers on the Synthux Simple matrix to the analog pins of the Daisy, now what?</sub>
+<sub>So you've connected some potentiometers on the Synthux Simple matrix to the analog pins of the Daisy, now what? (picture from Synthux)</sub>
 
 There already exists a comprehensive [guide for pd2dsy](https://forum.electro-smith.com/t/quick-guide-on-setting-up-a-custom-json-file-for-pd2dsy-oopsy/4021) by Takumi Ogata on the Daisy forum.
 

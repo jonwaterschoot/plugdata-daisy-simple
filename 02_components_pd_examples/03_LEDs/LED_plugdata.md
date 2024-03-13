@@ -40,6 +40,10 @@ For Plugdata this means that when we've setup the hardware and custom json file 
 
 ## What it looks like
 
+<img alt="LED illustration Wikipedia" width="400px" height="auto" src="img\LED-wikipedia.png">
+
+<sub>from [Wikipedia By Inductiveload](https://en.wikipedia.org/wiki/Light-emitting_diode#/media/File:LED,_5mm,_green_(en).svg) - Own work by uploader, drawn in Solid Edge and Inkscape.</sub>
+
 ### One color LED
 
 A one color LED has two legs, an anode and a cathode.
@@ -49,6 +53,10 @@ The longer leg is usually the anode connecting to power, the shorter leg the cat
 ### RGB LED
 
 RGB LED's have four legs, one for each color and one pin.
+
+![RGB projecting 3 colors](img\640px-RGB-Led-projection.jpg)
+
+<sub>An RGB led projecting it's 3 colors Red Green and Blue - From [Wikipedia By Viferico](https://en.wikipedia.org/wiki/Light-emitting_diode#/media/File:RGB-Led-projection.jpg) - Own work, CC BY-SA 4.0</sub>
 
 I think you'll mostly come across the common cathode RGB LED, however search for "RGB LED Common Cathode versus Common Anode" and you'll find many confused souls.
 

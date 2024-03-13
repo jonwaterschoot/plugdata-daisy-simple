@@ -24,6 +24,16 @@ If you are new or intimidated by programming and find writing your own C/C++ or 
 
 This site has info on the basic things you'll need to start building and programming a Synth and/or audio FX device.
 
+## Watch these videos first, they'll make everything easier to digest here
+
+This website contains a lot of text, each time I try to be coherent and complete, i end up with lengthy info. The videos made by Wasted Audio, the current maintainer of HVCC, are a good way to get insight into how the HVCC compiler works and how Plugdata is one of the ways that the compiler can help convert code.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XKohpWGTKsQ?si=TPU_sbOkSPxXVzE8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+Watch this one next:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-li27LeH4ZY?si=L-bVxzjuf8Tw0WZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Skills needed
 
 {: .new}

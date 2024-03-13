@@ -43,8 +43,8 @@
 #X text 636 571 connected with anode to 3v3 \, cathode to pin D24 \, json set to "invert": "false", f 67;
 #X text 567 453 [* -1] - [+ 1] reversing the 0 to 1 signal;
 #X text 122 469 Pitch in hz;
-#X text 122 357 Ease the amount of data this knob sends, f 19;
 #X text 567 503 snapshot~ converts a signal to float \, but needs to get updated with metro, f 68;
+#X text 122 357 Ease the amount of change this knob sends, f 19;
 #X connect 6 0 7 0;
 #X connect 6 0 18 0;
 #X connect 6 0 19 1;

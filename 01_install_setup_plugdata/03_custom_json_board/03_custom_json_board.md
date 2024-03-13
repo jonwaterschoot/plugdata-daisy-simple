@@ -16,6 +16,28 @@ parent: Installation and setting up Plugdata with Daisy
 
 # Setting up a custom json file to describe your daisy pin setup
 
+## How is your hardware setup?
+
+It's not easy to provide a general custom json, as that's mostly not going to be the same setup as your unique build.
+
+For some general boards and devices there are presets available that you can select from the compile menu.
+
+When setting up your own device, you'll most likely start with a breadboarded or a kit like those from Synthux.
+
+Even if you plan to skip going the cpp / arduino route and start learning here it might be worthed to watch the build guides, as they proviidde some guidance in how to solder and how to connect.
+
+{: .new}
+> These basics are maybe enough to get you started:
+>
+>- ***connect Analog Ground AGND and Digital Ground DGND***
+>   - Synthux pcb's have shortcuts for this
+>
+>- depending on wether you have mono or stereo in and outputs, connect your jacks accordingly
+>
+>- use the Daisy seed pinout diagram to look up which pins you can use for your components (e.g. analog for potentiometers)
+    - most pages here each show the pins you can use, or [link to a spreadsheet]() that I made
+> 
+
 ![Synthux Simple](img\Synthux_Simple_Daisy.jpg)
 <sub>So you've connected some potentiometers on the Synthux Simple matrix to the analog pins of the Daisy, now what? (picture from Synthux)</sub>
 
@@ -235,9 +257,13 @@ Though you'll probably end up tweaking or writing your own, there are a few pre-
 
 ### pd2dsy
 
-The pure data to daisy - [pd2dsy](https://github.com/electro-smith/pd2dsy) section on Github contains lots of useful info on the different components and the massages they send or receive.
+Though some stuff is slightly outdated compared to the workflow you get via Plugdata, many valuable info can be found here:
 
-As linked above: [custom_json_example.json from pd2dsy on their Github](https://github.com/electro-smith/pd2dsy/blob/master/util/custom_json_example.json)
+- The pure data to daisy - [pd2dsy](https://github.com/electro-smith/pd2dsy) section on Github contains lots of useful info on the different components and the massages they send or receive.
+
+  - See also this same page at the Wiki over at [DaisyWiki / pd2dsy Guide](https://github.com/electro-smith/DaisyWiki/wiki/pd2dsy-Guide), you'll find more info over there.
+
+- As linked above: [custom_json_example.json from pd2dsy on their Github](https://github.com/electro-smith/pd2dsy/blob/master/util/custom_json_example.json)
 
 ### json2daisy
 
@@ -337,7 +363,7 @@ This is the file from plugdata's Github but I've added Toggle Switches on pins 6
 ```
 ---
 
-### Synthux Simple Touch - jonwtr
+### Synthux Simple Touch - jonwtr - setting up MPR121 Touch Sensor
 
 This is the version I'm using. Note that for this to work you have to edit the 'mother-file' because of a bug the pins are not setup correct. To change the main json definition file you can do this:
 

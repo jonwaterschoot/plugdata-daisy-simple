@@ -38,6 +38,8 @@ If a pin like on many micro-controllers can only output a steady 3V or 5V, there
 
 For Plugdata this means that when we've setup the hardware and custom json file to use the PWM approach we can simply send a value between 0 and 1 to achieve brightness. Animate this change and we'll achieve fading.
 
+***
+
 ## What it looks like
 
 <img alt="LED illustration Wikipedia" width="400px" height="auto" src="img\LED-wikipedia.png">
@@ -67,6 +69,8 @@ For the common cathode RGB LED you need to wire up each R, G, B, pin with a resi
 Using an extra chip, e.g. PCA9685, like done on some of the Electro-Smith devices (Patch, Petal), is probably the best way if you're in need of more pins or LED's.
 There is a breakout board by Adafruit that connects over i2c, however, I've not tried hooking this up myself, so can't provide full guidance. [Look at the json files of json2daisy](https://github.com/electro-smith/json2daisy/tree/f77c6b40b95372643616dbef445e760998aacf33/src/json2daisy/resources), e.g. the main component_defs.json and the board specific json files for The Patch and PPetal, you'll find the code used for those. Look for words LED and the chip PCA9685.
 
+***
+
 ## Pins - wiring up the LED's
 
 For the sake of demoing, we'll be using single color LED's. These have a shorter leg, the cathode that needs to be connected to ground and the longer leg that goes through a resistor, 22O ohm, into the Daisy GPIO pins.
@@ -95,6 +99,8 @@ This video demonstrates the led flicker / stepped behavior:
 {: .new}
 > Todo / to check: Which pins can do PWM? Thus far I've used the Analog pins, yet defining them in the custom json as led's sets them up as pwm pins, so as per some info I understand that any pin can be setup as pwm because it's software pwm, hardware pwm is still under development. Source: [Takumi Ogata on Daisy forum](https://forum.electro-smith.com/t/dimming-leds-with-hardware-pwm/4957/3) and: [Led Class reference on libDaisy](https://electro-smith.github.io/libDaisy/classdaisy_1_1_led.html#details)
 
+***
+
 ## Components custom json
 
 Depending on how you've wired the pins you might find it easy to define the invert to false.
@@ -114,6 +120,8 @@ This is the way to address the pins in json, note the invert line.
             "pin": 24,
             "invert": "false"
 ```
+
+***
 
 ## PD example(s)
 
@@ -177,7 +185,7 @@ Using metro with a toggle we send a 1 or a 0 after each bang that the tgl sends
 
 In this example we want the LED to be on when the touchpad is toggled on. Depending on your pin setup this might need a simple reversing of the 0 to 1 value.
 
-This patch is using the touch sensor mpr121, to get that sensor running, you need to do some extra stuff, see the page 'sensors' for more info.
+This patch is using the touch sensor mpr121, to get that sensor running, you need to do some extra stuff, see the page 'custom json board' ([link](01_install_setup_plugdata\03_custom_json_board\03_custom_json_board.html)) for more info.
 You could simply use e.g. a button/switch instead.
 
 ![](img\ledtest_fading_reversed_mpr121.jpg)
@@ -202,6 +210,8 @@ Note there's rather a lot of needless extra complexity due to the testing, I hop
 {: .new}
 > After all of my testing, I've come to the decision to leave invert out of the custom json, and reverse the value in Plugdata when needed.
 > Depending on what LED's and how you have wired them up, you might want to define the desired values on `loadbang` as well. E.g. if your patch/synth boots and turns the led on, and only updates after you use it the first time.
+
+***
 
 ## Links / references / sources
 
@@ -230,7 +240,7 @@ Note there's rather a lot of needless extra complexity due to the testing, I hop
 To ensure the flickering/ stepped behaviour was caused by software or hardware I tried some cpp code.
 
 I've tested the difference between Plugdata and using Arduino to fade the leds, and must conclude that the flickering is caused somewhere along the 'software' side.
-Note in the video I just shot the Synthux Simple Fix has the two different wirings, while the Simple Touch has already been re-soldered with the anodes into pins 24 and 25. 
+Note in the video I just shot the Synthux Simple Fix has the two different wirings, while the Simple Touch has already been re-soldered with the anodes into pins 24 and 25.
 
 the current setup:
 

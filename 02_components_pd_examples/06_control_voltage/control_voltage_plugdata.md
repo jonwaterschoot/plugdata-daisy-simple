@@ -18,19 +18,18 @@ parent: Components Plugdata examples
 
 How Daisy can send or receive CV signals over some of it's pins.
 
-{: .highlight }
-> 💡 This page is still in draft mode.
+{: .attention }
+> 👀 This page is still in draft mode.
 
-Example for the json file:
-
-https://github.com/electro-smith/json2daisy/blob/main/src/json2daisy/resources/patch_init.json
-
-You can send values between 0 and 1 to those send objects.
-
- and it should be exactly like you said: [s cvout1 @hv_param]
-
-you need regular control messages
-the cv i/o in Daisy are all running at control rate. so they evaluate once every audio block (every 1ms at default settings)
+>Example for the json file: https://github.com/electro-smith/json2daisy/blob/main/src/json2daisy/resources/patch_init.json
+>
+>You can send values between 0 and 1 to those send objects.
+>
+>[s cvout1 @hv_param]
+>
+>you need regular control messages
+>
+>the cv i/o in Daisy are all running at control rate. so they evaluate once every audio block (every 1ms at default settings)
 
 From Daisy forum, an [answer by Takumi Ogata](https://forum.electro-smith.com/t/is-there-a-resource-for-how-to-use-json-pin-names-when-using-pd2dsy/4005/6):
 

@@ -93,11 +93,15 @@ Here are the results of my tests:
 |Sending "1" to LED +  normal json|LED = ON|LED = OFF|
 |Sending "1" to LED + json set to `"invert": "false"` |LED = OFF|LED = ON|
 
-This video demonstrates the led flicker / stepped behavior:
-![Testing fading resulting in jitter / stepped / flickering](img\leds-fading_flickerstepped.mp4)
+This video demonstrates the led flicker / stepped behavior, some flicker is caused by the camera shutter, but you can see a difference:
+<video width="auto" height="auto" controls>
+  <source src="img/img\leds-fading_flickerstepped.mp4" type="video/mp4">
+</video>
 ![Testing fading](img\testingfadingvideo.png)
+
 {: .new}
 > Todo / to check: Which pins can do PWM? Thus far I've used the Analog pins, yet defining them in the custom json as led's sets them up as pwm pins, so as per some info I understand that any pin can be setup as pwm because it's software pwm, hardware pwm is still under development. Source: [Takumi Ogata on Daisy forum](https://forum.electro-smith.com/t/dimming-leds-with-hardware-pwm/4957/3) and: [Led Class reference on libDaisy](https://electro-smith.github.io/libDaisy/classdaisy_1_1_led.html#details)
+
 
 ***
 
@@ -215,31 +219,34 @@ Note there's rather a lot of needless extra complexity due to the testing, I hop
 
 ## Links / references / sources
 
-  - https://github.com/electro-smith/json2daisy/blob/f77c6b40b95372643616dbef445e760998aacf33/src/json2daisy/resources/component_defs.json#L179
+- [The component_defs.json file](https://github.com/electro-smith/json2daisy/blob/f77c6b40b95372643616dbef445e760998aacf33/src/json2daisy/resources/component_defs.json#L179): at line 179 you can see the LED implementation
 
-  - https://electro-smith.github.io/libDaisy/classdaisy_1_1_led.html
+- libDaisy - Hardware Library for Daisy: [daisy::Led Class Reference](
+https://electro-smith.github.io/libDaisy/classdaisy_1_1_led.html)
   
-  - https://electro-smith.github.io/libDaisy/led_8h_source.html
+- libDaisy - Hardware Library for Daisy: [led.h](https://electro-smith.github.io/libDaisy/led_8h_source.html)
 
-  Forum posts:
+### Forum posts:
 
-  - https://forum.electro-smith.com/t/issue-getting-led-to-work-with-gpio-pin/4078
+- Electro-smith forum: [Issue getting LED to work with GPIO Pin](https://forum.electro-smith.com/t/issue-getting-led-to-work-with-gpio-pin/4078)
   
-  - https://forum.electro-smith.com/t/repurpose-seed-pins/1111
+- Electro-smith forum: [Repurpose seed pins](https://forum.electro-smith.com/t/repurpose-seed-pins/1111)
   
-  - https://forum.electro-smith.com/t/dimming-leds-with-hardware-pwm/4957/3
+- Electro-smith forum: [Dimming LEDs with hardware PWM?](https://forum.electro-smith.com/t/dimming-leds-with-hardware-pwm/4957/3)
 
-  Discord Thread on Daisy server: about LED's + Daisy + Plugdata
+### Discord Thread
 
-  - [Thread in the channel #puredata "LED's and Daisy's"](https://discord.com/channels/1037767234803740694/1209141293003841578)
+   on Daisy server: about LED's + Daisy + Plugdata
+
+- [Thread in the channel #puredata "LED's and Daisy's"](https://discord.com/channels/1037767234803740694/1209141293003841578)
 
 ***
 
 ## Addendum - testing with Arduino
 
-To ensure the flickering/ stepped behaviour was caused by software or hardware I tried some cpp code.
+To ensure the flickering/ stepped behavior was caused by software or hardware I tried some cpp code that I quickly cobbled together using **Copilot**.
 
-I've tested the difference between Plugdata and using Arduino to fade the leds, and must conclude that the flickering is caused somewhere along the 'software' side.
+I've tested the difference between Plugdata and using Arduino to fade the led's, and must conclude that the flickering is caused somewhere along the 'software' side.
 Note in the video I just shot the Synthux Simple Fix has the two different wirings, while the Simple Touch has already been re-soldered with the anodes into pins 24 and 25.
 
 the current setup:

@@ -16,6 +16,33 @@ nav_order: 1
 # Get up and running with Plugdata and Daisy 
 **(Get up and running with Plugdata and Daisy on your Synthux Simple pcb's)**
 
+The goal is to give a starters guide for noobs wanting to learn how to connect and setup your own hardware with the software Plugdata.
+
+The Plugdata approach has the capacity to be a bit more user friendly than going for the full-on coding method with e.g. Arduino or C++. But also has the potential to be your goto for larger projects.
+
+![Plugdata Synthux Simple Touch example](01_install_setup_plugdata\01_what_is_plugdata\img\Simpletouch_soundscpr_plugdata_example.jpg)
+
+{: .new}
+>**Under construction note**
+>
+>Everything about this, Plugdata, Synthux, Daisy, HVCC, ... These are all pieces of a puzzle that are constantly evolving or might be in various stages of development. Hence depending on when you read this, things might have changed.
+>
+>This website/guide itself is heavily under construction. I welcome critique, help, copying, etc.
+
+## The site is built around three main parts
+
+ - **What is Plugdata**
+   - A more informative general part.
+ - **Installation and setup**
+   - The essential / needed part.
+ - **Examples for basic components with Plugdata**
+   - The juicy stuff, what you'll jump to, even though you should learn to walk first.
+
+{: .new}
+> Use the menu / Table of content to quickly glance at this site's content. Left on larger screens / at the top for smaller screens
+>
+> On top of every page there should be a TOC for each particular page.
+
 ## For whom?
 
 You're interested in programming your own synth, but;
@@ -43,7 +70,7 @@ Watch this one next:
 
 There are so many tutorials and courses to find on anything these days, so depending on your needs you might first want to learn more about Synthesis, or about how microcontrollers work, ...
 
-My recent journey from Plugdata to Daisy came about through learning Synthux's Simple PCB's and info they provide.
+My recent journey from Plugdata to Daisy came about through learning Synthux's Simple PCB's and the info and lessons they provide.
 
 This is why I'm using the Synthux Simple boards in the examples on this site, but most will apply to anyone using Daisy Seed and Plugdata.
 
@@ -57,18 +84,6 @@ So, to conclude, I can use a computer pretty well, but, I'm still not very skill
 
 The visual programming of Plugdata is the ideal method for me, it's still programming, yet I find it more approachable to see the structure as a network of connected parts.
 
-
-## The site is built around three main parts
-
- - What is Plugdata
- - Installation and setup
- - Examples for basic components with Plugdata
-
-{: .new}
-> Use the menu / Table of content to quickly glance at this site's content. Left on larger screens / at the top for smaller screens
->
-> On top of every page there should be a TOC for each particular page.
-
 ## This is a work in progress
 
 {: .highlight}
@@ -76,7 +91,7 @@ The visual programming of Plugdata is the ideal method for me, it's still progra
 
 The main goal was to provide some working examples of Plugdata code that works with components like knobs and LEDs connected to the Daisy seed.
 
-Ironically, thus far only the pages on setting up are quasi ready. 🙈
+When a page is incomplete, or looks like a draft, it's exactly what it looks like. 🙈
 
 ## Why I made this
 
@@ -104,13 +119,11 @@ iframe {
 
 ## From markdown to Github Pages
 
-This site is built with markdown and gets published to a Github Pages website via the tool just-the-docs.
+This site is built with markdown and gets published to a Github Pages website via the tool just-the-docs. Some internal links might not always work, but menus are auto generated and should always point to the correct pages.
 
 This has also been a learning process for me, but has brought me some new knowledge on the Github workflow with vscode.
 
-The goal is to give a starters guide for noobs wanting to learn how to connect and setup your own hardware with the software Plugdata.
-
-The Plugdata approach has the capacity to be a bit more user friendly than going for the full-on coding method with e.g. Arduino or C++. But also has the potential to be your goto for larger projects.
+In the future I might try out a different template / setup. I've been looking into [MKdocs Material](https://github.com/squidfunk/mkdocs-material) I'm even considering using this to build my personal website/portfolio.
 
 ## Suggestions / Questions
 

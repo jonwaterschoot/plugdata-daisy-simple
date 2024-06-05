@@ -43,7 +43,10 @@ Even if you plan to skip going the cpp / arduino route and start learning here i
 
 There already exists a comprehensive [guide for pd2dsy](https://forum.electro-smith.com/t/quick-guide-on-setting-up-a-custom-json-file-for-pd2dsy-oopsy/4021) by Takumi Ogata on the Daisy forum.
 
-And although we're compiling from Plugdata, the workflow is quasi the same. Even better, everything is just a bit easier as we do the compile process from within Plugdata. We do however need to make a separate file that we select in the compile window: **the custom json**. And that has to follow the same principles.
+And there's [this DaisyWiki page that explains how a custom json is set up for Oopsy](https://github.com/electro-smith/DaisyWiki/wiki/How-To-Custom-JSON-with-Oopsy) (Max/MSP Gen~ integration) 
+and [one DaisyWiki specific for pd2dsy](https://github.com/electro-smith/DaisyWiki/wiki/Pd2dsy-JSON)
+
+And although we're compiling from Plugdata, the workflow is quasi the same. Even better, the process is just a bit easier as we do the compile and flashing process from within Plugdata. We do however need to make a separate file that we select in the compile window: **the custom json**. And that has to follow the same principles.
 
 {: .new}
 > As a recap, the Plugdata to Daisy workflow:
@@ -163,7 +166,7 @@ Therefore we need to verify the type of pin we need: e.g. for a potentiometer we
 
 Pin numbers can become confusing, therefor I've made this overview table.
 
-![Pins Table overview](img\Pins-Table_overview_Daisy_plugdata.png)
+![Pins Table overview](img/Pins-Table_overview_Daisy_plugdata.png)
 
 Follow this [link to the spreadsheet](https://docs.google.com/spreadsheets/d/1xtg_s1tk8tm-6qNkBLFc6V1L_Mpmu-PCOvv7qEyr9mU/edit?usp=sharing) showing the pin numbers used on/in the Daisy board, Plugdata, Synthux, ...
 
@@ -201,7 +204,7 @@ Here's a part of that [linked table](https://docs.google.com/spreadsheets/d/1xtg
 
 In the examples of the components in the next chapter you'll find the json instructions for each specific component.
 
-![Simple components footprint](img\Simple_footprint_diagram_S-p-800.jpeg)
+![Simple components footprint](img/Simple_footprint_diagram_S-p-800.jpeg)
 <sub>illustration from Synthux website</sub>
 
 There's a full list made by Electrosmith with all the supported components and all the parameters and ways you can receive or send info from and to them. 
@@ -210,7 +213,7 @@ In Plugdata you will need things like `float` numbers, or you might need a `bang
 
 For example, the standard message a toggle switch, which is basically a type of button, will send is a bang. However we also have the option to add something to our name of the switch so Daisy will send a different type of message. The Switch has the options `_fall` for when a pin gets disconnected. Or a `_press` function that will send a specific type of message, a float of either 0 or 1.
 
-![Plugdata Toggle Switches _press _fall](img\PlugdataToggleSwitches_press_fall.png)
+![Plugdata Toggle Switches _press _fall](img/PlugdataToggleSwitches_press_fall.png)
 
 |Switch|---|Returns a bang on the signal's rising edge (i.e. when the switch is actuated).|
 |:----|:----|:----|

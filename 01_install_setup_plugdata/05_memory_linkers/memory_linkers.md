@@ -31,7 +31,7 @@ Maybe you'll need some space to to save a sample. It's possible, yet pretty comp
 >
 > - break your patch down into smaller pieces to find what is causing the error.
 >
-> - Use printing (to serial) if your in doubt of what values you're outputting. [see this page](01_install_setup_plugdata\04_serial\serial_debug_print.md)
+> - Use printing (to serial) if you are in doubt of what values you're outputting. [see this page](01_install_setup_plugdata/04_serial/serial_debug_print.md)
 >
 > - Read the info at HVCC docs for more general info, tips and tricks and known limitations, (un)supported items, etc.: [HVCC getting started](https://wasted-audio.github.io/hvcc/docs/02.getting_started.html)
 
@@ -66,13 +66,11 @@ That’s why I ended up using a custom linker to make use of SDRAM. Delays make 
 
 ## More info at these links:
 
-[GitHub - electro-smith/pd2dsy: Utility for converting Pure Data (Vanilla) patches to Daisy projects.](https://github.com/electro-smith/pd2dsy/tree/master?tab=readme-ov-file#--ram)
+GitHub - electro-smith/pd2dsy: Utility for converting Pure Data (Vanilla) patches to Daisy projects.](https://github.com/electro-smith/pd2dsy/tree/master?tab=readme-ov-file#--ram)
 
-And this site 
+And this site: [libDaisy: Getting Started - External SDRAM](https://electro-smith.github.io/libDaisy/md_doc_2md_2__a6___getting-_started-_external-_s_d_r_a_m.html)
 
-[libDaisy: Getting Started - External SDRAM](https://electro-smith.github.io/libDaisy/md_doc_2md_2__a6___getting-_started-_external-_s_d_r_a_m.html)
-
-To be able to use this larger memory I've been using the custom linker [sram_linker_sdram.lds](https://github.com/electro-smith/pd2dsy/blob/master/util/sram_linker_sdram.lds) found at the pd2dsy Github: 
+To be able to use this larger memory I've been using the custom linker (***do not download via right-click, follow the download link to Github and download the RAW file***) [sram_linker_sdram.lds](https://github.com/electro-smith/pd2dsy/blob/master/util/sram_linker_sdram.lds) found at the pd2dsy Github: 
 
 [pd2dsy has the different linkers](https://github.com/electro-smith/pd2dsy/tree/master/util)
 

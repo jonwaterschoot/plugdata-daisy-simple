@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Memory and CPU - custom linker
-nav_order: 5
+nav_order: 6
 parent: Installation and setting up Plugdata with Daisy
 ---
 
@@ -39,9 +39,9 @@ Maybe you'll need some space to to save a sample. It's possible, yet pretty comp
 
 In the compile window in Plugdata you'll see an option under **Patch size** to pick different modes, as of writing this document, there are the Small, Big and Huge options.
 
-- These different modes pick a different way of how your patch get's compiled and uploaded to Daisy's different memory options. 
-- Simply put: Small is the internal memory, Big goes to SRAM, Huge to QSPI. 
-- However it's more complicated than just using the bigger option as each has it's own ways and speeds of working. 
+- These different modes pick a different way of how your patch get's compiled and uploaded to Daisy's different memory options.
+- Simply put: Small is the internal memory, Big goes to SRAM, Huge to QSPI.
+- However it's more complicated than just using the bigger option as each has it's own ways and speeds of working.
 
 {: .attention}
 > You can specify whether you'd like to optimize your project's RAM usage for speed or size. The Daisy's internal SRAM has a fast access time, but it can be quite limited at 512kB (or even less if you're using the bootloader!). The external SDRAM (note the D), while it can be slower to access, affords a hefty 64MB of space. Currently, only the heap is placed in SDRAM if size is selected (meaning all dynamic allocations happen in SDRAM), but that's the best use-case for it anyway, since the largest program you could squeeze onto the Daisy would only be around 512kB.

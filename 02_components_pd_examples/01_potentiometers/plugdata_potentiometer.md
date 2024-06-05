@@ -14,9 +14,6 @@ parent: Components Plugdata examples
 {:toc}
 </details>
 
-{: .highlight}
-> This is how far I've gotten in the content of this site, so what follows is a draft.
-
 # Potentiometers - knobs and faders
 
 A potentiometer is a three-terminal resistor with a sliding or rotating contact that forms an adjustable voltage divider. If only two terminals are used, one end and the wiper, it acts as a variable resistor or rheostat.

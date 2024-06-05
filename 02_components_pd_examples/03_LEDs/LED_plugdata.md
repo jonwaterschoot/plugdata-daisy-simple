@@ -13,7 +13,7 @@ The little lights that can enhance the user experience; or just brighten the day
 
 A type of diode that illuminates when you pass power through it. The electricity will only flow in one direction. Take a small 3.3V coin cell and attach the LED, flip it around and you'll see this: one way it works, the other way round it doesn't.
 
-<img src="img\ledCoincell.svg" width="150" height="auto">
+<img src="img/ledCoincell.svg" width="150" height="auto">
 
 |LED|---|Expects a floating point value from 0-1. The brightness is PWM modulated to match the input.|
 |:----|:----|:----|
@@ -42,7 +42,7 @@ For Plugdata this means that when we've setup the hardware and custom json file 
 
 ## What it looks like
 
-<img alt="LED illustration Wikipedia" width="400px" height="auto" src="img\LED-wikipedia.png">
+<img alt="LED illustration Wikipedia" width="400px" height="auto" src="img/LED-wikipedia.png">
 
 <sub>from [Wikipedia By Inductiveload](https://en.wikipedia.org/wiki/Light-emitting_diode#/media/File:LED,_5mm,_green_(en).svg) - Own work by uploader, drawn in Solid Edge and Inkscape.</sub>
 
@@ -56,7 +56,7 @@ The longer leg is usually the anode connecting to power, the shorter leg the cat
 
 RGB LED's have four legs, one for each color and one pin.
 
-![RGB projecting 3 colors](img\640px-RGB-Led-projection.jpg)
+![RGB projecting 3 colors](img/640px-RGB-Led-projection.jpg)
 
 <sub>An RGB led projecting it's 3 colors Red Green and Blue - From [Wikipedia By Viferico](https://en.wikipedia.org/wiki/Light-emitting_diode#/media/File:RGB-Led-projection.jpg) - Own work, CC BY-SA 4.0</sub>
 
@@ -93,11 +93,15 @@ Here are the results of my tests:
 |Sending "1" to LED +  normal json|LED = ON|LED = OFF|
 |Sending "1" to LED + json set to `"invert": "false"` |LED = OFF|LED = ON|
 
-This video demonstrates the led flicker / stepped behavior:
-![Testing fading resulting in jitter / stepped / flickering](img\leds-fading_flickerstepped.mp4)
-![Testing fading](img\testingfadingvideo.png)
+This video demonstrates the led flicker / stepped behavior, some flicker is caused by the camera shutter, but you can see a difference:
+<video width="auto" height="auto" controls>
+  <source src="img/leds-fading_flickerstepped.mp4" type="video/mp4">
+</video>
+![Testing fading](img/testingfadingvideo.png)
+
 {: .new}
 > Todo / to check: Which pins can do PWM? Thus far I've used the Analog pins, yet defining them in the custom json as led's sets them up as pwm pins, so as per some info I understand that any pin can be setup as pwm because it's software pwm, hardware pwm is still under development. Source: [Takumi Ogata on Daisy forum](https://forum.electro-smith.com/t/dimming-leds-with-hardware-pwm/4957/3) and: [Led Class reference on libDaisy](https://electro-smith.github.io/libDaisy/classdaisy_1_1_led.html#details)
+
 
 ***
 
@@ -133,7 +137,7 @@ In the patches were I added a green canvas, that's the indication that the code 
 
 Sending `[O]` (zero), 
 
-![Turning the led on / off](img\ledtest_send-0_inverse.jpg)
+![Turning the led on / off](img/ledtest_send-0_inverse.jpg)
 <sub>Turning the led on / off</sub>
 
 (note the added messages 1 or 0 depending on the use of invert in the custom json.)
@@ -144,7 +148,7 @@ Sending `[O]` (zero),
 
 Using a potentiometer (knob or fader) to change the led value.
 
-![changing led value with a potentiometer](img\knobfadeled_line.png)
+![changing led value with a potentiometer](img/knobfadeled_line.png)
 
 ### PD example: Setting brightness
 
@@ -168,7 +172,7 @@ The sweet spot value for my example was `0.2`.
 
 Plugdata patch:
 
-![ledtest brightness](img\ledtestbrightness.png)
+![ledtest brightness](img/ledtestbrightness.png)
 
 [Download this patch `ledtest_brightness.pd`](ledtest_brightness.pd)
 
@@ -176,7 +180,7 @@ Plugdata patch:
 
 Using metro with a toggle we send a 1 or a 0 after each bang that the tgl sends
 
-![Fading with metro and line~](img\ledtestfadingmetro_inverse.jpg)
+![Fading with metro and line~](img/ledtestfadingmetro_inverse.jpg)
 <sub>Fading with metro and line~</sub>
 
 [Download this patch `ledtest_fading_metro`](ledtest_fading_metro.pd)
@@ -185,10 +189,10 @@ Using metro with a toggle we send a 1 or a 0 after each bang that the tgl sends
 
 In this example we want the LED to be on when the touchpad is toggled on. Depending on your pin setup this might need a simple reversing of the 0 to 1 value.
 
-This patch is using the touch sensor mpr121, to get that sensor running, you need to do some extra stuff, see the page 'custom json board' ([link](01_install_setup_plugdata\03_custom_json_board\03_custom_json_board.html)) for more info.
+This patch is using the touch sensor mpr121, to get that sensor running, you need to do some extra stuff, see the page 'custom json board' ([link](01_install_setup_plugdata/03_custom_json_board/03_custom_json_board.html)) for more info.
 You could simply use e.g. a button/switch instead.
 
-![](img\ledtest_fading_reversed_mpr121.jpg)
+![](img/ledtest_fading_reversed_mpr121.jpg)
 <sub>Fading volume and led brightness with line~</sub>
 
 [Download this patch `ledtest_fading_reversed_mpr121.pd`](ledtest_fading_reversed_mpr121.pd)
@@ -201,7 +205,7 @@ Again, depending on the way you wired cathode / anode and wether you define `"in
 
 Note there's rather a lot of needless extra complexity due to the testing, I hope that you get the basic principles.
 
-![ledtest fading osc vol led](img\ledtest_fading-osc-vol-led.png)
+![ledtest fading osc vol led](img/ledtest_fading-osc-vol-led.png)
 
 [Download this patch `ledtest_fading-osc-vol-led`](ledtest_fading-osc-vol-led.pd)
 
@@ -215,31 +219,34 @@ Note there's rather a lot of needless extra complexity due to the testing, I hop
 
 ## Links / references / sources
 
-  - https://github.com/electro-smith/json2daisy/blob/f77c6b40b95372643616dbef445e760998aacf33/src/json2daisy/resources/component_defs.json#L179
+- [The component_defs.json file](https://github.com/electro-smith/json2daisy/blob/f77c6b40b95372643616dbef445e760998aacf33/src/json2daisy/resources/component_defs.json#L179): at line 179 you can see the LED implementation
 
-  - https://electro-smith.github.io/libDaisy/classdaisy_1_1_led.html
+- libDaisy - Hardware Library for Daisy: [daisy::Led Class Reference](
+https://electro-smith.github.io/libDaisy/classdaisy_1_1_led.html)
   
-  - https://electro-smith.github.io/libDaisy/led_8h_source.html
+- libDaisy - Hardware Library for Daisy: [led.h](https://electro-smith.github.io/libDaisy/led_8h_source.html)
 
-  Forum posts:
+### Forum posts:
 
-  - https://forum.electro-smith.com/t/issue-getting-led-to-work-with-gpio-pin/4078
+- Electro-smith forum: [Issue getting LED to work with GPIO Pin](https://forum.electro-smith.com/t/issue-getting-led-to-work-with-gpio-pin/4078)
   
-  - https://forum.electro-smith.com/t/repurpose-seed-pins/1111
+- Electro-smith forum: [Repurpose seed pins](https://forum.electro-smith.com/t/repurpose-seed-pins/1111)
   
-  - https://forum.electro-smith.com/t/dimming-leds-with-hardware-pwm/4957/3
+- Electro-smith forum: [Dimming LEDs with hardware PWM?](https://forum.electro-smith.com/t/dimming-leds-with-hardware-pwm/4957/3)
 
-  Discord Thread on Daisy server: about LED's + Daisy + Plugdata
+### Discord Thread
 
-  - [Thread in the channel #puredata "LED's and Daisy's"](https://discord.com/channels/1037767234803740694/1209141293003841578)
+   on Daisy server: about LED's + Daisy + Plugdata
+
+- [Thread in the channel #puredata "LED's and Daisy's"](https://discord.com/channels/1037767234803740694/1209141293003841578)
 
 ***
 
 ## Addendum - testing with Arduino
 
-To ensure the flickering/ stepped behaviour was caused by software or hardware I tried some cpp code.
+To ensure the flickering/ stepped behavior was caused by software or hardware I tried some cpp code that I quickly cobbled together using **Copilot**.
 
-I've tested the difference between Plugdata and using Arduino to fade the leds, and must conclude that the flickering is caused somewhere along the 'software' side.
+I've tested the difference between Plugdata and using Arduino to fade the led's, and must conclude that the flickering is caused somewhere along the 'software' side.
 Note in the video I just shot the Synthux Simple Fix has the two different wirings, while the Simple Touch has already been re-soldered with the anodes into pins 24 and 25.
 
 the current setup:

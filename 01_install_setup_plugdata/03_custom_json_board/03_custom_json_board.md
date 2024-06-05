@@ -20,11 +20,13 @@ parent: Installation and setting up Plugdata with Daisy
 
 It's not easy to provide a general custom json, as that's mostly not going to be the same setup as your unique build.
 
+When making your own device the way you connect various components to the Daisy pins will almost certainly be different from another project. Off course you're bound to the type and amount of available pins and their respective functions (e.g. analog, digital, power, tx/rx, audio out, ...)
+
 For some general boards and devices there are presets available that you can select from the compile menu.
 
-When setting up your own device, you'll most likely start with a breadboarded or a kit like those from Synthux.
+When setting up your own device, you'll most likely start with a breadboard or a kit like those from Synthux.
 
-Even if you plan to skip going the cpp / arduino route and start learning here it might be worthed to watch the build guides, as they proviidde some guidance in how to solder and how to connect.
+Even if you plan to skip going the cpp / arduino route and start learning here it might be worthed to watch the build guides, as they provide some guidance in how to solder and how to connect.
 
 {: .new}
 > These basics are maybe enough to get you started:

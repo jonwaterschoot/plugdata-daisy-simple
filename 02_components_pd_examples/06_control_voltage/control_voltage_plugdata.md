@@ -18,7 +18,7 @@ parent: Components Plugdata examples
 
 How Daisy can send or receive CV signals over some of it's pins.
 
-{: .attention }
+{: .warning }
 > 👀 This page is still in draft mode.
 
 >Example for the json file: https://github.com/electro-smith/json2daisy/blob/main/src/json2daisy/resources/patch_init.json
@@ -33,18 +33,8 @@ How Daisy can send or receive CV signals over some of it's pins.
 
 From Daisy forum, an [answer by Takumi Ogata](https://forum.electro-smith.com/t/is-there-a-resource-for-how-to-use-json-pin-names-when-using-pd2dsy/4005/6):
 
-{: .note }
-> The Daisy Seed outputs 0.0V-3.3V out of its DAC outputs. And on boards like the Daisy Patch, that signal is amplified to 0.0V-5.0V.
->
-> The Daisy (unlike Arduino) has GPIO pins. So pin D20 can be analog input or even digital output. Also worth noting that, even if you decided to use pin D20 as analog A5, it doesn’t care if you’re using an analog component like potentiometer or digital component like a switch as long as the voltage coming in is 0.0V to 3.3V range.
->
-> Cd4051 Multiplexer Tutorial Is Here! 6
->
-> If you’re using DaisyDuino or .cpp, it’ll be easy: [Let's Add 4+ More DACs/CVs with Quad DAC! (Also, I2C tips!)](https://forum.electro-smith.com/t/lets-add-4-more-dacs-cvs-with-quad-dac-also-i2c-tips/3428)
-For pd2dsy and Oopsy, I haven’t looked too deep into it.
-> In general, a component like the MCP4922 is recommend for adding more DACs.
-
 ***
+
 ## Name
 
 ### Control Voltage - CV
@@ -67,16 +57,16 @@ Generally CV is transferred via a TS, mono patch cable, in the 3.5mm jack format
 
 ## Pins
 
-Eurorack and CV signals vary in the range they operate in, on some devices you can setup what this range is. Typical ranges are –5 V to 5 V, 0 V to 5 V, 0 V to 10 V ...
+Eurorack and CV signals vary in the range they operate in, on some devices you can setup what this range is. Typical ranges are –5V to 5V, 0V to 5V, 0V to 10V ...
 
 > The Daisy Seed outputs 0.0V-3.3V out of its DAC outputs. And on boards like the Daisy Patch, that signal is amplified to 0.0V-5.0V.
 >
-> The Daisy (unlike Arduino) has GPIO pins. So pin D20 can be analog input or even digital output. Also worth noting that, even if you decided to use pin D20 as analog A5, it doesn’t care if you’re using an analog component like potentiometer or digital component like a switch as long as the voltage coming in is 0.0V to 3.3V range.
+> [...] So pin D20 can be analog input or even digital output. Also worth noting that, even if you decided to use pin D20 as analog A5, it doesn’t care if you’re using an analog component like potentiometer or digital component like a switch as long as the voltage coming in is 0.0V to 3.3V range.
 
 ADC: all Analog labeled pins: D15 to D25 and D28
 DAC OUT: Only pins D22 and D23
 
-For arduino / cpp Takumi Ogata posted this: [Let’s Add 4+ More DACs/CVs with Quad DAC! (Also, I2C tips!)](https://forum.electro-smith.com/t/lets-add-4-more-dacs-cvs-with-quad-dac-also-i2c-tips/3428)
+If you need more in/out-puts you'll need to add some extra circuitry: e.g. for arduino / cpp Takumi Ogata posted this: [Let’s Add 4+ More DACs/CVs with Quad DAC! (Also, I2C tips!)](https://forum.electro-smith.com/t/lets-add-4-more-dacs-cvs-with-quad-dac-also-i2c-tips/3428)
 
 GPIO overview table of the analog ADC DAC pins:
 
@@ -86,7 +76,44 @@ GPIO overview table of the analog ADC DAC pins:
 
 ## Components json
 
-Example for the json file:
+This json is set up for a Synthux Simple Fix pcb. There are two pots and two mono jacks installed on this board.
+Note how cv_1 is also setup like a potentiometer with `"component": "AnalogControl"`
+
+```json
+{
+   "name": "SimpleFix",
+   "som": "seed",
+   "audio": {
+     "channels": 2
+   },
+
+    "components": {
+       "knob0": {
+           "component": "AnalogControl",
+           "pin": 15
+       },
+       "knob1": {
+           "component": "AnalogControl",
+           "pin": 16
+       },
+       "cv_1": {
+           "component": "AnalogControl",
+           "pin": 17
+       },
+       "gate_in_1": {
+        "component": "GateIn",
+        "pin": 18
+       }
+
+   }
+
+}   
+```
+
+Download this file [simple-fix_2knobs_1cv_1gate_in.json](simple-fix_2knobs_1cv_1gate_in.json)
+
+
+Example for the json file for the Electrosmith patch.Init():
 
 https://github.com/electro-smith/json2daisy/blob/main/src/json2daisy/resources/patch_init.json
 
@@ -98,7 +125,12 @@ https://github.com/electro-smith/json2daisy/blob/main/src/json2daisy/resources/p
 
 ## links / references / sources
 
-[Example for the json file of Patch Init](https://github.com/electro-smith/json2daisy/blob/main/src/json2daisy/resources/patch_init.json)
+PD to C with plugdata - Custom Modular Synth Voice - video by Wasted Audio:
+- https://www.youtube.com/watch?v=NZ8c3VkBXRQ
+
+
+Example for patch.Init() on the json2daisy github repository: [json file for Patch Init](https://github.com/electro-smith/json2daisy/blob/main/src/json2daisy/resources/patch_init.json)
+- link to this Eurorack module: https://electro-smith.com/products/patch-init
 
 Daisy forum, an [answer by Takumi Ogata](https://forum.electro-smith.com/t/is-there-a-resource-for-how-to-use-json-pin-names-when-using-pd2dsy/4005/6)
 

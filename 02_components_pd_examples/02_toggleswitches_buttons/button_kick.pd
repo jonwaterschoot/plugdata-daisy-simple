@@ -20,6 +20,7 @@
 #X obj 1324 578 r knob1 @hv_param;
 #X obj 1046 378 r button1 @hv_param;
 #X text 1230 377 "button1" setup in json as a 'switch' component - this will trigger a bang, f 35;
+#X obj 1395 613 hsl 128 17 0 1 0 0 empty empty empty -2 -8 0 10 #191919 #ffffff #ffffff 0 1;
 #X connect 0 0 1 0;
 #X connect 1 0 6 0;
 #X connect 3 0 4 0;
@@ -34,3 +35,4 @@
 #X connect 15 0 12 1;
 #X connect 18 0 14 0;
 #X connect 19 0 11 0;
+#X connect 21 0 14 0;

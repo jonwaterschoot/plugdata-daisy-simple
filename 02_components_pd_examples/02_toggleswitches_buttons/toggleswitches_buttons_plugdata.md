@@ -21,7 +21,7 @@ parent: Components Plugdata examples
 
 ![toggle switches on Synthux Simple Touch](img\toggle_switch_on_synthuxSimpleTouch.jpg)
 
-<sub>Whether the switch is the shape of a toggle, or a simple pushbutton, in our code there both called switches.</sub>
+<sub>Whether the switch is the shape of a toggle, or a simple pushbutton, in our code they are both called switches.</sub>
 
 ## Name
 

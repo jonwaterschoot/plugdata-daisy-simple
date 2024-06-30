@@ -1,0 +1,32 @@
+{
+    "name": "Simple",
+    "som": "seed",
+    "defines": {
+        "OOPSY_TARGET_HAS_MIDI_INPUT": 1
+    },
+    "audio": {
+        "channels": 2
+    },
+    "components": {
+        "knob1": {
+            "component": "AnalogControl",
+            "pin": 15
+        },
+        "toggle1left": {
+           "component": "Switch",
+           "pin": 8
+       },
+       "toggle1right": {
+           "component": "Switch",
+           "pin": 9
+       },
+       "toggle2up": {
+           "component": "Switch",
+           "pin": 7
+       },
+       "toggle2down": {
+           "component": "Switch",
+           "pin": 6
+       }
+    }
+}

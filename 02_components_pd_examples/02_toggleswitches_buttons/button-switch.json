@@ -1,0 +1,20 @@
+{
+    "name": "Simplebutton",
+    "som": "seed",
+    "defines": {
+        "OOPSY_TARGET_HAS_MIDI_INPUT": 1
+    },
+    "audio": {
+        "channels": 2
+    },
+    "components": {
+        "knob1": {
+            "component": "AnalogControl",
+            "pin": 15
+        },       
+       "button01": {
+           "component": "Switch",
+           "pin": 7
+       }
+    }
+}

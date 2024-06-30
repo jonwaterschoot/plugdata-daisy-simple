@@ -14,23 +14,46 @@ parent: Components Plugdata examples
 {:toc}
 </details>
 
+{: .warning }
+> 👀 This page is in draft mode and might contain double or lacking info ...
+
 # Toggle switches and buttons
 
 ![toggle switches on Synthux Simple Touch](img\toggle_switch_on_synthuxSimpleTouch.jpg)
 
-From discord by jonwtr:
-> They look the same, but one has two positions, on/on the other has three clicks on/off/on. So they are the same as a button. Difference being that they remain in position. 
-I just meant, toggle/switch versus a button, in that way. For a noob it may not be obvious that they're the same.
+<sub>Whether the switch is the shape of a toggle, or a simple pushbutton, in our code there both called switches.</sub>
 
 ## Name
 
 Button, switch, toggle switch,  they all refer to the same principle of having one connection and changing its state.
 
-So in stores you'll find hundreds of types and names.
+In stores you'll find hundreds of types and names.
 
 A good idea to start is with the terms ON-OFF and then see which configuration fits your needs.
 
 ## function - what can it do
+
+The simplest we can think of is a button you push. Like those on a keyboard. You can hold the button down, and when you release it it jumps back up.
+
+There are more variants like the type of light switch buttons, you flick or push it in one position, another click releases it.
+
+The on-off-on switches you'll find in the Synthux kits can be seen as two buttons in one. The middle position is 'neutral' flicking it either side will engage and keep pushing down on that knob.
+
+In Plugdata we have a few ways to address a button:
+- Trigger or bang: It can react and do something as soon as you've pushed it;
+- Press: you can press and hold it for a while;
+- or make it do something when you release it, ...
+
+In it's simplest way we push it and it sends a bang. In this example the push is connecting digital pin 8 to ground which triggers a bang:
+
+
+![Push button triggering a kickdrum](img/pushbutton-kick.jpg)
+
+<video width="720" height="auto" controls>
+  <source src="img/plugdatadaisybutton_kick.mp4" type="video/mp4">
+</video>
+
+### Toggles
 
 The SPDT ON-ON and ON-OFF-ON LOOK the same, have the same 3 pins. But the mechanical difference is that one flips from left to right, and the other also stops in the middle.
 
@@ -41,6 +64,8 @@ ON - OFF - ON Does the same, however it's middle position is disconnected from e
 In Plugdata we can use the info of releasing a button or toggle as well.
 
 That means while the ON-OFF-ON toggle is only connected to two pins, we can use it to toggle between 3 states or 3 different functions. E.g. 3 octaves, 3 wave forms, ...
+
+### Learning to print to serial for debugging
 
 {: .highlight}
 > For debugging purposes, or just learning what positions or messages you're sending by moving or pushing the button/switch, it can be handy or necessary to learn how to print to serial.
@@ -56,6 +81,8 @@ Steps to follow:
 - connect to a serial monitor
   - If you have already setup Arduino you can use it's serial monitor.
 [More info at its own page.](https://jonwaterschoot.github.io/plugdata-daisy-simple/01_install_setup_plugdata/04_serial/serial_debug_print.html)
+
+- It's always best to remove print objects (and other gui objects like sliders) that are not used in the final patch as these cost memory/performance.
 </details>
 
 ## What it looks like
@@ -82,6 +109,10 @@ Some toggles will just be a way of breaking or connecting one wire.
 
 
 ## Pins
+
+For a simple pushbutton you want the one end of your button in a digital pin, the other connected to ground.
+
+
 
 Both the ON-ON and the ON-OFF-ON Toggle switches have 3 pins.
 

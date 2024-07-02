@@ -48,7 +48,7 @@ For faders:
 
 Potentiometers, or knobs and faders are a way to change values from one end to another.
 
-While the potentiometer itself is read by the hardware in steps of 0 to 1023, it gets translated to a float value from 0 to 1.
+While the potentiometer itself is read by the hardware in steps of 0 to 1023, it gets translated to/from a float value from 0 to 1.
 
 {: .note}
 |Type|_variant|Behavior|
@@ -81,6 +81,12 @@ A potentiometer is a variable resistor with three pins. Two are connected to the
 Hence, we need the analog pins on our boards. These are labeled as A0 to A11, these pins could be used for other things as well, so in the custom json we'll have to instruct to use them as `AnalogControl`
 
 Connect the outer pins to voltage and ground, connect the middle pin to an Analog pin.
+
+> {: .highlight}
+> Changing the order of the outer pins will change wether your knob/fader goes from 0 to 1 or reversed.
+> When changing the wiring isn't an option, or you might be holding your PCB in another orientation, upside down, at 90 degrees, you could reverse the values by sending it through these blocks:
+> `[* -1]` - `[* +1]`
+> ![inverting the value of a knob](img/potentiometer-invertvalue.png)
 
 Follow this [link to the spreadsheet](https://docs.google.com/spreadsheets/d/1xtg_s1tk8tm-6qNkBLFc6V1L_Mpmu-PCOvv7qEyr9mU/edit?usp=sharing) showing the pin numbers used on/in the Daisy board, Plugdata, Synthux, ...
 
@@ -126,8 +132,13 @@ In plugdata we receive the values via a block with this text: `r knob1 @hv_param
 
 ## PD example(s)
 
-In this example we connect knob1 to the frequency of an oscillator, and a fader controls the volume.
+As shown higher up, if you change the wiring direction of a potentiometer it'll send inverted values. The examples below presume the direction is as you'd intent expect, if not, adding this small inverting trick solves it: `[* -1]` - `[* +1]`
 
+![inverting the value of a knob](img/potentiometer-invertvalue.png)
+
+### Example - potentiometer controlling pitch and volume
+
+In this example we connect knob1 to the frequency of an oscillator, and a fader controls the volume.
 
 ![potentiometer fader analogcontrol Plugdata example](img/potentiometer_fader_analogcontrol.png)
 
@@ -159,8 +170,7 @@ Use `line~`, with the `~` to keep your patch as much as possible in this continu
 
 Or copy this text and paste it in a Plugdata patch (it should get "transformed" into what you see in the screenshot above):
 
-```pd
-
+```
 #X obj 282 119 r knob1 @hv_param;
 #X msg 282 247 \$1 20;
 #X obj 282 299 line~;
@@ -193,14 +203,15 @@ Or copy this text and paste it in a Plugdata patch (it should get "transformed" 
 #X connect 9 0 7 0 32.................s.........PK.........jE....;
 #X connect 13 0 1 0;
 #X connect 14 0 7 0;
-
 ```
 
 ## links / references / sources
 
-TODO:
 
-- link to parts on e.g. Thonk
+
+[buy potentiometers on Thonk](https://www.thonk.co.uk/product-category/potentiometer/)  
+
+TODO:
 
 - link to synthux docs/vids
 

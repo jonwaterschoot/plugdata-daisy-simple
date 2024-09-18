@@ -60,22 +60,22 @@
            "component": "Switch",
            "pin": 6
        },
-       "led1": {
-        "component": "Led",
-        "pin": 23
+       "cv_1": {
+           "component": "AnalogControl",
+           "pin": 23
        },
-       "led2": {
-            "component": "Led",
-            "pin": 24
+       "cv_2": {
+           "component": "AnalogControl",
+           "pin": 24
        },
-       "led3": {
-       "component": "Led",
-       "pin": 25
-       },
-       "led4": {
-        "component": "Led",
-        "pin": 28
-        }
+	"gate_in_1": {
+	   "component": "GateIn",
+	   "pin": 25
+  	},
+	"gate_in_2": {
+	   "component": "GateIn",
+	   "pin": 28
+  	}
 
   }
 

@@ -19,9 +19,9 @@ parent: Installation and setting up Plugdata with Daisy
 ## RTFM
 
 We all like to jump in head first, and then when we fall we look up our mistakes.
-There is a lot of useful info at the HVCC docs that goes over some of the most important things to consider when debugging.
+There is a lot of useful info at the [HVCC docs](https://wasted-audio.github.io/hvcc/) that goes over some of the most important things to consider when debugging.
 
-Read this when getting started, look at the Tips and Tricks section, and the Known Limitations.
+Read this when [getting started: wasted-audio.github.io/hvcc/docs/02.getting_started.html](https://wasted-audio.github.io/hvcc/docs/02.getting_started.html), look at the Tips and Tricks section, and the Known Limitations.
 
 ## No spaces in your files and paths, no CAPS in custom json names.
 
@@ -57,8 +57,13 @@ Sometimes these crashes happen:
 
 To be able to read messages sent by our components we can send it to print. If you've done this with an Arduino you probably know the function `Serial.print()`.
 
+While it can be reassuring to see the results of a print message, mostly you can check the components list to see what kind of messages get sent by your knobs and such. Sometimes objects send a float sometimes a bang, consult e.g. [this page at the pd2dsy GitHub](https://github.com/electro-smith/pd2dsy?tab=readme-ov-file#interacting-with-the-daisy-io
+) to see a list.
+
 {: .highlight}
-> Sending to Print takes up a bit of additional program memory as well, so don't do this too quickly as you may fill up the print buffer and things can crash.
+> Just like some other Plugdata blocks, like the gui sliders can be handy while you are patching, they do take up some additional program memory, so if your patch is getting too bign you could remove these. Sending to Print for example also takes up a bit of space. When no longer needed remove these.
+>
+>Also don't do this serial printing too quickly as you may fill up the print buffer and things can potentially crash.
 
 Steps to follow:
 - In Plugdata you connect your component to a print object.
@@ -73,7 +78,8 @@ Connect the outlet of your component so you can then send messages into the `[pr
 ![print object in Plugdata](img/plugdata_print_object.png)
 
 {: .new}
-> Though we cannot read the serial output from a connected Daisy in Plugdata, the output of print inside of Plugdata can still be very usefull for learning about your signal flow.
+> Though we cannot read the serial output from a connected Daisy in Plugdata, the output of print inside of Plugdata can still be very useful for learning about your control flow and checking if certain actions trigger the values or bangs that you are expecting.
+>
 > Connect e.g. a bng button to a print object and in the console window you'll see the message: `print: bang`.
 
 ## Compiling with serial debugging
@@ -90,17 +96,8 @@ If you have setup the Arduino IDE you could use the serial monitor.
 
 ![Arduino serial monitoring](img/arduino_serial_print_plugdata.png)
 
+I've also used the serial monitor on the online arduino editor.
+
 #### Serial monitor via system terminal
 
-There are other methods that I'm not familiar with yet. So you'll have to study this or ask around. 👀
-
-One type of command I came across for Linux was `stty`:
-
-```
-#!/bin/bash
-stty -F /dev/ttyUSB0 115200 -echo -icrnl raw
-cat /dev/ttyUSB0 | tee /dev/tty | grep --max-count=1 -F "root@ramfs:"
-```
-
-If you know how that works before I test it properly send me a message ;-)
-
+These serial connections can of course also be read via your systems OS terminal or other applications as well. You should search something like "serial monitoring + your OS", as it'll differ per system.

@@ -62,19 +62,19 @@
        },
        "cv_1": {
            "component": "AnalogControl",
-           "pin": 23
+           "pin": 28
        },
        "cv_2": {
            "component": "AnalogControl",
+           "pin": 25
+       },
+       "gate_in_1": {
+           "component": "GateIn",
            "pin": 24
        },
-	   "gate_in_1": {
-	       "component": "GateIn",
-	       "pin": 25
-  	   },
-	   "gate_in_2": {
-	       "component": "GateIn",
-	       "pin": 28
+       "gate_in_2": {
+           "component": "GateIn",
+           "pin": 23
   	}
 
   }

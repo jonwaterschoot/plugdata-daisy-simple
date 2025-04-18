@@ -1,0 +1,35 @@
+{
+   "name": "SimpleFix",
+   "som": "seed",
+   "defines": {
+    "OOPSY_TARGET_HAS_MIDI_INPUT": 1
+   },
+   "audio": {
+     "channels": 2
+   },
+
+   "parents": {
+     "mpr121_driver": {
+       "component": "Mpr121"
+       }
+   },
+
+    "components": {
+
+       "knob0": {
+           "component": "AnalogControl",
+           "pin": 15
+       },
+       "knob1": {
+           "component": "AnalogControl",
+           "pin": 16
+       },
+       "daisyled": {
+      "component": "UserLed"
+    }
+
+  }
+
+}
+
+

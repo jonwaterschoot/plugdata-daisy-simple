@@ -1,4 +1,4 @@
-	{
+{
    "name": "SimpleTouch",
    "som": "seed",
    "audio": {
@@ -68,14 +68,17 @@
            "component": "AnalogControl",
            "pin": 24
        },
-	   "gate_in_1": {
-	       "component": "GateIn",
-	       "pin": 25
-  	   },
-	   "gate_in_2": {
-	       "component": "GateIn",
-	       "pin": 28
-  	}
+       "gate_in_1": {
+	   "component": "GateIn",
+	   "pin": 25
+  	},
+	"gate_in_2": {
+	   "component": "GateIn",
+	   "pin": 28
+  	},
+        "daisyled": {
+           "component": "UserLed"
+        }
 
   }
 

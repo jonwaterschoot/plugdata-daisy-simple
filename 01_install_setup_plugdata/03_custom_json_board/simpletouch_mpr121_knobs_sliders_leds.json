@@ -75,7 +75,10 @@
        "led4": {
         "component": "Led",
         "pin": 28
-        }
+       },
+       "daisyled": {
+        "component": "UserLed"
+     }
 
   }
 

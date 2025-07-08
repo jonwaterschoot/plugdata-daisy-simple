@@ -104,7 +104,7 @@ The download might take a while but is a one time event, so once the toolchain h
 The complete description on setting up a custom json can be found in the next chapter: [Setting up a custom json](01_install_setup_plugdata\03_custom_json_board\03_custom_json_board.md)
 
 In Plugdata you'll be referring to your connected components with an object that looks like this:
-> `r my_custom_knob @hv.param`
+> `r my_custom_knob @hv_param`
 
 Typing this into an object in Plugdata will create a block with an outlet that outputs a value from `0 to 1`  (e.g. 0.1 or 0.891)
 
@@ -120,7 +120,7 @@ In the compile window we'll point to a custom json file where we list our hardwa
 > In the next chapter, [Setting up a custom json](01_install_setup_plugdata\03_custom_json_board\03_custom_json_board.md) there's a full example and more elaborate info on setting up this json file.
 
 For now, here's a small example of the content of the json file that's linked to our example  
-> `r my_custom_knob @hv.param`
+> `r my_custom_knob @hv_param`
 
 ```json
    "components": {
@@ -135,7 +135,7 @@ For now, here's a small example of the content of the json file that's linked to
 
 The toolchain is a collection of needed stuff to 'export' your patches into other formats, this could be straight to C++ or in our case it provides everything we need to compile it onto the Daisy seed.
 
-Follow [this link](https://wasted-audio.github.io/hvcc/) to learn more about Heavy.
+Follow [this link](https://wasted-audio.github.io/hvcc/) to learn more about Heavy on the official site.
 
 ***
 
